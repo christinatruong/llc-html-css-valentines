@@ -465,21 +465,94 @@ color: #222222;</textarea>
 
             ![](http://cl.ly/image/0G2x0n1U3x1k/Image%202015-02-09%20at%205.54.42%20PM.png)
             ![](http://cl.ly/image/2w292E0e1a1s/Image%202015-02-09%20at%205.55.23%20PM.png)
-
+        </section>
             
+        <section class="slide" data-markdown>
+        ##The Box Model
+
+Margins, padding, widths, and borders.
+
+![](http://cl.ly/image/131G2C1n3b1v/Image%202015-02-09%20at%206.09.11%20PM.png)
+
+This snippet is the fix for the way the box model handles the sizing of elements and is already included in your project CSS file.
+
+```css
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+```
+
+More info about this fix here: [http://www.paulirish.com/2012/box-sizing-border-box-ftw/](http://www.paulirish.com/2012/box-sizing-border-box-ftw/)
+
 
         </section>
 
-        <section class="slide" data-markdown>
+        <section class="slide">
+            <h2>Padding and Margin</h2>
 
+            <p>The <code>padding</code> and <code>margin</code> can both be declared using similar syntax of 1 to 4 values. Values can be declared using different measurement units but pixels or percentages are most commonly used. Setting the value to "0" will <strong>remove</strong> any default space on an HTML element. Any positive value will <strong>add</strong> space.</p>
+
+            <ul>
+                <li>4 values means top, right, bottom, left</li>
+                <li>3 values means top, right & left, bottom</li>
+                <li>2 values means top & bottom, right & left</li>
+                <li>1 value means the same amount of padding on all sides</li>
+            </ul>
+            
+            <p>Change some values to see the difference between margin and padding. Trying using 1 - 4 values. Let's also inspect the element using Chrome's Developer tool.</p>
+
+            <textarea class="snippet" data-subject="#padding">background: lightblue; 
+padding: 0 0 0 0;
+margin: 0 0 0 0;</textarea>
+            <p id="padding">padding and margin test</p>
+        </section>
+        <section class="slide" data-markdown>
+            ##Padding and Margin (continued)
+            The previous slide uses the shorthand properties. Both can also be declared by specifying a particular side.
+
+            ```
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            ```
+            ```
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            ```
         </section>
 
         <section class="slide" data-markdown>
+        ##Class exercise
 
+        Let's adjust some of the default space in the headings.
+        
+        ```css
+        h1 {
+            margin: 0;
+        }
+        h2 {
+            margin-bottom: 12px;
+        }
+        ```
+
+        Better but the text still doesn't wrap in the circular shape of the icon. Why is that? Because by default, the browser views every element as a box or rectangular shape.  However, there is some experimental CSS that can be used to handle this.
         </section>
 
         <section class="slide" data-markdown>
+            ##CSS Shapes
+            
+            From [HTML5 Rocks](http://www.html5rocks.com/en/tutorials/shapes/getting-started/):
 
+            "CSS Shapes allow web designers to wrap content around custom paths, like circles, ellipses and polygons, thus breaking free from the constraints of the rectangle.
+            
+            Shapes can be defined manually or they can be inferred from images."
+
+            It doesn't work in all browsers just yet, but it still nice to add this enhancement for the browsers that do. Here's a great resource for checking which features are supported by various browsers:
+
+            http://caniuse.com/#search=shape-outside
         </section>
       
         <section class="slide">
