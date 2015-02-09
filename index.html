@@ -292,15 +292,133 @@ Referenced in the `&lt;head>` element with a `&lt;link&gt;` tag and two **attrib
     &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
 &lt;/head&gt;
 ```
-There's already a `styles.css` file in your project folder. Let's link it in our HTML page.
+There's a `styles.css` file in your project folder. Let's link it to the HTML page and see what happens!
 
 **Pro tip!**  Sublime Text shortcut: type "link" + tab key. Ta da!
     </section>
+        
+        <section class="slide">
+            <h2>Font Styles & Typography</h2>
+            <p>Before we go back to the css file, let's experiment with a few CSS properties by changing some of the values below.</p>
+            <textarea class="snippet" data-subject="#typography-example">line-height: 1.25;
+font-family: Helvetica, Arial, serif;
+font-size: inherit;
+font-weight: normal;
+text-transform: inherit;
+color: #222222;</textarea>
+            <div id="typography-example" class="example">
+                <p>Just some text to test out the above styles. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni repellat sunt quae fugit illum in aut sed, quis nesciunt totam veritatis, dolores alias modi fuga commodi dicta facilis, consequatur temporibus.</p>
+            </div>
+
+            <p>Resources: <a href="http://www.htmldog.com/guides/css/beginner/text/">Text CSS properties reference</a>, <a href="http://csstypeset.com/">http://csstypeset.com</a></p>
+        </section>
 
         <section class="slide" data-markdown>
-            ##Class & ID attributes
+            ##Web fonts
+
+            Services like [Google Fonts](http://www.google.com/fonts/) make it easier to use a variety of fonts without worrying about whether it's installed on the users' computer.
+
+            **Google Fonts** allows you to link directly to their stylesheet so no file downloads are necessary! To use these fonts:
+
+            * Select the fonts you want to use and **Add to Collection**.  
+            * You can **Review** them to take a closer look, then choose *Use* when ready.
+            * Select font weights. The more you choose, the more it will slow down page load time.
+            * The default character set should contain what you need. Only select an option if you need to add additional language support.
+            * Grab the `&lt;link&gt;` code snippet and add it the `&lt;head&gt;` part of your page.
+            * Use the new fonts with the `font-family` property as listed in the example on the Google Fonts page.
+
+            That's it!
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Type & Descendant Selectors
+
+            Type selectors select HTML elements by using the tag name.
+
+            ```css
+            p {
+              /* styles  all paragraphs on the page */  
+            }
+            ```
+
+            Descendant selectors target any child/descendant elements.  Note the space *in between* each selector.
+
+            ```css
+            ul li a {
+              /* links inside of list items, inside of unordered lists. */
+            }
+            ```
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Class exercise: Add typography styles
+
+            1. Go to [Google Fonts](http://www.google.com/fonts/) and add **Sacramento** & **Lato** to our Collection (you can change it later).
+
+            1. Link the Google Fonts style sheet to `index.html`.
+
+            1. Let's add the **Lato** font to `body` and see what happens.
+
+            1. Now let's add the **Sacramento** font to the `h1` and `blockquote`.
+        </section>
+
+        <section class="slide" data-markdown>
+            ## Exercise #2: Personalize the Typography (15mins)
             
-            When **type selectors** are too general (targeting the HTML element), HTML gives us two ways to attach extra identifying information to target specific elements with two **attributes**, `class` (can be used multiple times) and `id` (can only be used once per page).  
+            1.  (Optional) Find font families from [Google Fonts](http://www.google.com/fonts/).
+            1. Update the `font-size` and `line-height` to your liking. Example:
+
+                ```css
+                h1 {
+                  font-size: 50px;
+                  line-height: 1;
+                }
+                ```
+            1. Change the font colours using the `color` property!  Note that this property accepts three types of values: keyword, hex or RBG. The example below is all the same colour. Here's a great colour resource: http://colours.neilorangepeel.com/
+
+                ```css
+                h1 {
+                    color: tan;
+                    color: #D2B48C;
+                    color: rgb(210,180,140);
+                }
+                ```
+        </section>
+        <section class="slide" data-markdown>
+            ##Unicodes
+
+            We can add icons to our page without using images! Select a shape from [here](http://unicode-table.com/en/#miscellaneous-symbols) and choose either **Copy to clipboard** or the HTML code.
+
+            ![](http://cl.ly/image/0h1i1q1j0Q2E/Image%202015-02-09%20at%205.13.38%20PM.png)
+
+            Let's add it using a `span` tag.
+
+            ```xml
+            &lt;span&gt;&amp;#9829;&lt;/span&gt;
+            ```
+            Though these may look like images, they are text and can be treated like text when applying CSS to it. 
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Icon Fonts
+            Similar to Google Fonts, there are services that allow you to link to their style sheet and use their icon fonts, for free!  Let's check out [Font Awesome](http://fortawesome.github.io/Font-Awesome/) for today's project.
+
+            Go to **Get Started** and add the Font Awesome CSS file to the head of your HTML document.
+
+            Then under **Icons** we can select which icons to use. It will then take you to the page for that specific icon, copy the HTML markup and add it to your project.  Here's an example of the bomb icon:
+
+            http://fortawesome.github.io/Font-Awesome/icon/bomb/
+            
+            ```xml
+            &lt;i class=&quot;fa fa-bomb&quot;&gt;&lt;/i&gt;
+            ```
+
+            More about the `i` element: http://html5doctor.com/i-b-em-strong-element/
+        </section>
+        <section class="slide" data-markdown>
+            ##Class attributes
+            
+            When **type selectors** are too general (targeting the HTML element), HTML gives us two ways to attach extra identifying information to target specific elements with two **attributes**, `class`.  
 
             ``` 
             /* targets ALL parapraphs */
@@ -311,90 +429,56 @@ There's already a `styles.css` file in your project folder. Let's link it in our
             .danger {
                 color: red;
             }
-            /* only applies to the element that contains this id, defined by number symbol  */
-            #danger {
-                border: 1px solid red;
-            }
             ```
 
             ```xml   
             &lt;p&gt;Regular text.&lt;/p&gt;
 &lt;p class=&quot;danger&quot;&gt;Red error message text or some other dangerous text.&lt;/p&gt;
-&lt;div id="danger"&gt;Will display a red border.&lt;/div&gt;
             ```
         </section>
 
         <section class="slide">
-            <h2>Syntax Highlighting</h2>
-            <p>Code highlighting is provided by <a href="http://highlightjs.org">highlight.js</a> and will be applied to any code wrapped in <code>&lt;pre>&lt;code>&lt;/code>&lt;/pre></code>. The syntax highlighting theme files can be found in <strong>framework > css > highlightjs-themes</strong>. If you wish to change it, add the css file there and update the css link. Visit <a href="http://highlightjs.org">highlight.js</a> to see the full list of supported languages, themes and other usage information.</p>
-
-            <h3>JavaScript</h3>
-<pre><code>var greeting = "Hello!";
-
-function sayHello() {
-    console.log(greeting);
+            <h2>Class Exercise</h2>
+            <p>Let's style our love bomb!</p>
+            <ol>
+                <li>Adjust the font size using a class. Which class will target the icon?
+<pre><code class="delayed">.fa-bomb {
+  font-size: 190px;
 }
-
-sayHello();
 </code></pre>
+                </li>
+                <li class="delayed">Let's float it to the left of our headings and paragraphs.
+<pre><code>.fa-bomb {
+  font-size: 190px;
+  float: left;
+}
+</code></pre>
+                </li>
+            </ol>
+            <p class="delayed"><a href="http://css-tricks.com/all-about-floats/">All about floats here</a>.</p>
+        </section>
 
-            <h3>CSS</h3>
-<pre><code>body {
-    margin: 0;
-    padding: 0;
-}</code></pre>
+        <section class="slide side-by-side" data-markdown>
+            ##Margin, Padding & CSS Shapes
+            
+            This image on the left is what our project currently looks like.  Notice how the spacing is different in the final project and the text also wraps around the love bomb a little nicer?
 
-            <p>For HTML, the left tag, <code><</code>, needs to be escaped. Sometimes for HTML snippets, the plugin, may not register it properly as HTML.  If that is the case, add an <code>.xml</code> class to the <code>pre</code> tag. Here's an online escape tool: <a href="http://www.htmlescape.net/htmlescape_tool.html">http://www.htmlescape.net/htmlescape_tool.html</a></p>
+            ![](http://cl.ly/image/0G2x0n1U3x1k/Image%202015-02-09%20at%205.54.42%20PM.png)
+            ![](http://cl.ly/image/2w292E0e1a1s/Image%202015-02-09%20at%205.55.23%20PM.png)
 
-            <h3>HTML</h3>
-            <pre><code>&lt;!DOCTYPE html>
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-    &lt;/body&gt;
-&lt;/html></code></pre>
+            
+
         </section>
 
         <section class="slide" data-markdown>
-##Markdown example
 
-Write in Markdown! Include the `data-markdown` attribute in the sectin tag. See the [documentation for markdown syntax](http://daringfireball.net/projects/markdown/).  Both text and code blocks are supported at this time.
+        </section>
 
-Code blocks need to be denoted either by three backticks (`) or by tabbing the content in one indent (at least 4 spaces).  **Tabbing to create a code block won't work in this slide deck if your content begins tabbed in in your source code.** 
+        <section class="slide" data-markdown>
 
-Also, if you need to use any HTML, the entire slide has to be written in HTML and the markdown syntax will no longer work.
+        </section>
 
-You can specify the language of the code block by following the three backticks immediately by the language name.  View the source to see this in action.
-
-#### Javascript Example
-
-```javascript
-var myJSVariable = "Syntax Highting for Javascript";
-```
-
-#### CSS Example
-
-```css
-.css-selector{
-    highlight : syntax;
-}
-```
-
-#### HTML Example
-For HTML, set `xml` as the language to get nicer syntax highlighting.  Also, the left angled bracket of the HTML tag needs to be escaped. Here's a handy tool for creating escaped result with HTML entities: http://www.htmlescape.net/htmlescape_tool.html
-
-```xml
-&lt;header>
-    &lt;h1>I'm an H1!&lt;/h1>
-    &lt;p>This is a paragraph&lt;/p>
-&lt;/header>
-
-```
-#### indented example
-
-    code block that has to guess at the language and likely gets it wrong.  It thinks this is applescript.
+        <section class="slide" data-markdown>
 
         </section>
       
