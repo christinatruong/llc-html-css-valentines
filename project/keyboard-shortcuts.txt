@@ -1,0 +1,5 @@
+CTRL/CMND + S to save file
+CTRL/CMND + R to refresh the browser
+CTRL/CMND + c to copy 
+CTRL/CMND + x to copy and cut 
+CTRL/CMND + v to paste 

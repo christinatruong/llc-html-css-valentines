@@ -12,6 +12,7 @@ body {
   font-size: 18px;
   line-height: 1.25;
 }
+
 main {
   max-width: 655px;
   margin: 0 auto;
@@ -19,46 +20,49 @@ main {
   background: #f1f1f1;
   padding: 50px 40px 60px 40px;
   margin-top: 90px;
-  // overflow: hidden;
 }
-  @-moz-document url-prefix() {
-    main {
-      max-width: 700px;
-    }
-  }
 
+@-moz-document url-prefix() {
+  main {
+    max-width: 700px;
+  }
+}
 h1 {
   font-size: 50px;
   margin: 0;
   color: #B109AA;
 }
-h1, 
+
+h1,
 blockquote p {
   font-family: 'Sacramento', cursive;
   line-height: 1;
 }
+
 h2 {
   margin-bottom: 12px;
 }
+
 .fa-bomb {
   font-size: 190px;
   float: left;
   width: 200px;
   height: 200px;
-  shape-outside: polygon(0px 55px, 0 198px, 130px 205px, 
-    168px 122px, 165px 55px, 210px 45px, 209px 0px, 150px 0px);
+  shape-outside: polygon(0px 55px, 0 198px, 130px 205px, 168px 122px, 165px 55px, 210px 45px, 209px 0px, 150px 0px);
 }
 
 /* QUOTE 
 ---------*/
 blockquote {
   clear: both;
-  margin-top: 75px; 
+  margin-top: 75px;
 }
+
 blockquote p {
   font-size: 32px;
   margin-bottom: 10px;
 }
+
 cite {
   float: right;
 }
@@ -69,7 +73,8 @@ cite {
   right: 50px;
   font-size: 200px;
   opacity: .1;
-  color: #B109AA; /* LLC purple */
+  color: #B109AA;
+  /* LLC purple */
 }
 
 .heart-pulse {
@@ -96,60 +101,61 @@ cite {
   animation-duration: 6s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-
-  &:nth-of-type(1){
-    bottom: 1200px;
-    left: 2%;
-  }
-  &:nth-of-type(2){
-    bottom: 500px;
-    left: 15%;
-  }
-  &:nth-of-type(3){
-    bottom: 1000px;
-    left: 50%;
-  }
-  &:nth-of-type(4){
-    bottom: 475px;
-    left: 80%;
-  }
-  &:nth-of-type(5){
-    bottom: 600px;
-    left: 40%;
-  }
-  &:nth-of-type(6){
-    bottom: 1200px;
-    left: 60%;
-  }
 }
-
+.heart-falling:nth-of-type(1) {
+  bottom: 1200px;
+  left: 2%;
+}
+.heart-falling:nth-of-type(2) {
+  bottom: 500px;
+  left: 15%;
+}
+.heart-falling:nth-of-type(3) {
+  bottom: 1000px;
+  left: 50%;
+}
+.heart-falling:nth-of-type(4) {
+  bottom: 475px;
+  left: 80%;
+}
+.heart-falling:nth-of-type(5) {
+  bottom: 600px;
+  left: 40%;
+}
+.heart-falling:nth-of-type(6) {
+  bottom: 1200px;
+  left: 60%;
+}
 
 /* ANIMATIONS */
 @-webkit-keyframes pulse {
-  0% { 
+  0% {
     transform: scale(1);
   }
-  50% { 
-    transform: scale(1.5); 
+
+  50% {
+    transform: scale(1.5);
   }
 }
 @keyframes pulse {
-  0% { 
+  0% {
     transform: scale(1);
   }
-  50% { 
-    transform: scale(1.5); 
+
+  50% {
+    transform: scale(1.5);
   }
 }
-
 @-webkit-keyframes falling {
   0% {
     transform: rotate(360deg);
   }
+
   50% {
     transform: rotate(0deg);
   }
-  100% { 
+
+  100% {
     bottom: -25px;
     transform: rotate(-360deg);
   }
@@ -158,18 +164,16 @@ cite {
   0% {
     transform: rotate(360deg);
   }
+
   50% {
     transform: rotate(0deg);
   }
-  100% { 
+
+  100% {
     bottom: -25px;
     transform: rotate(-360deg);
   }
 }
-
 /* MEDIA QUERIES */
-@media (max-width: 550px) {
 
-}
-
-
+/*# sourceMappingURL=main.css.map */

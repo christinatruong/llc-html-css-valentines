@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Ladies Learning Code</title>
+    <!-- Don't alter slideshow.css, CSSS slide deck needs it to work -->
+    <link rel="stylesheet" href="framework/css/slideshow.css">
+
+    <!-- Theme-specific styles -->
+    <link href='http://fonts.googleapis.com/css?family=Quicksand|Pacifico|Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="framework/css/highlightjs-themes/vs.css">
+    <link rel="stylesheet" href="framework/css/theme-llc.css">
+    <link rel="shortcut icon" href="framework/img/favicon.ico"> 
+
+    <!-- Workshop-specific styles -->
+    <link rel="stylesheet" href="framework/css/workshop.css">
+
+    <!-- Takes care of CSS3 prefixes! -->
+    <script src="framework/scripts/prefixfree.min.js"></script>
+</head>
+
+<!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
+<body data-duration="360">
+    
+    <!-- opens all links in a new window -->
+    <base target="_blank">
+    
+    <!-- Intro slide -->
+    <header class="slide intro first">
+        <img class="logo" src="framework/img/logo-llc-white.png">
+        <div class="info">
+            <h1 class="heading-bg">
+                <span class="dark">Welcome to</span><br>
+                <span>Ladies Learning Code!</span>
+            </h1>
+            <div class="heading-bg connected">
+                <span class="dark">GET CONNECTED:</span>
+                <span class="light">NETWORK: The Lab</span><br>
+                <span class="light">PASSWORD: Thisisthelab</span>
+            </div>
+        </div>
+
+        <div class="sponsor">
+            <p>In partnership with:</p>
+            <img src="framework/img/telus-logo-white.svg" height="75" alt="Telus">
+        </div>
+    </header>
+
+    <!-- Instructor info -->
+    <header class="slide intro">
+        <img class="logo" src="framework/img/logo-llc-white.png">
+        <div class="info">
+            <h1 class="heading-bg">
+                <span>HTML & CSS animations</span><br>
+                <span>Valentine's Day Edition</span>
+            </h1>
+
+            <h2><span>with</span> Christina Truong</h2>
+            <img class="instructor-img" src="framework/img/workshop/christina-truong.jpg" alt="Christina Truong">
+            <ul>
+              <li><i class="fa fa-envelope"></i><a href="mailto:hello@christinatruong.com">hello@christinatruong.com</li>
+              <li><i class="fa fa-desktop"></i><a href="http://christinatruong.com">christinatruong.com</a></li>
+              <li><i class="fa fa-twitter"></i><a href="http://twitter.com/christinatruong">@christinatruong</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="slide centered">
+            <h2>Today's Project</h2>    
+            <p data-height="625" data-theme-id="0" data-slug-hash="KwyGgY" data-default-tab="result" data-user="learningcode" class='codepen'>See the Pen <a href='http://codepen.io/learningcode/pen/KwyGgY/'>KwyGgY</a> by Ladies Learning Code (<a href='http://codepen.io/learningcode'>@learningcode</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+            <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+        </section>
+
+        <section class="slide"></section>
+
+        <section class="slide" data-markdown>
+            ##Setting Up Our Dev Tools
+
+            **[Sublime Text](http://www.sublimetext.com)** - a text editor with colour highlighting and other helpful features. If you are unable to install Sublime Text, try installing: [Notepad++](http://notepad-plus-plus.org/) (Windows), [Atom](https://atom.io/) (Mac) or [TextWrangler](http://www.barebones.com/products/textwrangler/) (older Macs).
+
+            **[Google Chrome](https://www.google.com/intl/en-CA/chrome/browser/)** - Choose a modern web browser that supports current web standards and has good development tools. To set Chrome as your default browser, follow [these instructions](https://support.google.com/chrome/answer/95417?hl=en). Another good option is Firefox. Visit [browsehappy.com](http://browsehappy.com) for more info about modern browsers.
+
+            **Developer tools** allow us to *inspect* any web page to see how it's built. These tools also make it easier to test and debug code. The tools can be accessed in 3 ways:
+            
+            * right-click / two-finger tap on a web page and select **Inspect Element**
+            * select the menu icon in the top right hand corner of the Chrome browser and select **Tools > Developer Tools**
+            * keyboard shortcut: **Ctrl + Shift + I** (PC) / **Cmnd + Option + I** (Mac)
+
+            Extra resource: http://discover-devtools.codeschool.com
+        </section>
+        <section class="slide" data-markdown>
+            ##Setting Up Our Work Flow
+
+            Inside of the folder you downloaded today, **llc-html-css-valentines-master**, there are a few different folders that contain different content.
+            
+            ```xml
+            llc-html-css-valentines-master
+                |-- framework // Contains files needed for slide presentation. Do not edit!
+                |-- project // Contains files for your project.
+                |-- index.html // This is the file you're viewing right now!
+            ```
+        </section>
+        <section class="slide" data-markdown>
+            ##Setting Up Our Work Flow
+            Let's open the project files in the browser and text editor.
+
+            1. Open Sublime Text and go to **File > Open**.  
+            ![](http://cl.ly/image/103C1W2s2T1H/Image%202015-01-28%20at%209.51.34%20PM.png)
+            1. Navigate to the **project** folder (inside the folder you downloaded with today's slides).
+            1. With the entire **project** folder selected, select **Open**.
+            The folder will appear in the side bar. Double click on `index.html` in the sidebar to open it.
+            1. Go to your Windows Explorer or Finder and navigate to the project folder, right-click/two-finger tap on index.html and choose **Open With > Chrome**
+            
+            You should see this in your browser:
+
+            ![](http://cl.ly/image/1h343P0a2W2y/Screenshot%202015-02-09%2012.31.22.png)
+        </section>
+
+        <section class="slide title" data-markdown>
+            #HTML
+            ##HyperText Markup Language
+        </section>
+
+        <section class="slide" data-markdown>
+            ##HTML overview
+            
+            What is this extra content that we see in the text editor but not in the browser?  It's HTML!
+
+            HTML (HyperText Markup Language) was created for web browsers to read and interpret the meaning of the content. 
+
+            To display content properly in the browser, use *tags*. Left (`<`) & (`>`) right angled brackets surround the tag name. Tags usually come in pairs — an opening tag and a *closing tag with a forward slash*:
+            
+            ```xml
+            &lt;tagname&gt;&lt;/tagname&gt;
+            ```
+
+            Tags are used to describe the meaning of the content, not what they look like. That's what CSS is for.
+
+            **Hint:**  
+            `shift + comma key` for the left angled bracket & `shift + period key` for the right angled brackets 
+        </section>
+        
+        <section class="slide" data-markdown>
+            ##HTML tags
+            
+            Here are some tags already included in your project's `index.html`.
+
+            **Title**: Found in the `&lt;head>` section of the HTML document. Used for defining the page title. Displays in the browser's tab, search engine results and bookmarks.
+            
+            ```xml
+            &lt;title&gt;Page Title&lt;/title&gt;
+            ```
+
+            **Headings**: There are 6 heading tags (`&lt;h1&gt;,&lt;h2&gt;,...,&lt;h6&gt;`) and they follow a hierarchical structure. `&lt;h1&gt;` represents the most important heading on the page.
+
+            ```xml
+            &lt;h1&gt;Most Important Heading&lt;/h1&gt;
+            &lt;h2&gt;Second Most Important Title&lt;/h2&gt;
+            ```
+
+            **Paragraphs**: Created with the `&lt;p&gt;&lt;/p&gt;` tags.
+            ```xml
+            &lt;p&gt;I'm a paragraph.&lt;/p&gt;
+            ```
+            
+            **Block Quotation**: Created with the `&lt;blockquote&gt;&lt;/blockquote&gt;` tags. Used to indicates that the enclosed text is a quotation. A source of the quotation may be given using the `&lt;cite>` tag.
+
+            ```xml
+            &lt;blockquote&gt;
+                &lt;p&gt;You know you're in love when you can't fall asleep because reality is finally better 
+                than your dreams.&lt;/p&gt;
+                &lt;cite&gt;&#x2015; Dr. Seuss&lt;/cite&gt;
+            &lt;/blockquote&gt;
+            ```
+        </section>
+
+        <section class="slide" data-markdown>
+            ##HTML tags
+
+            Here are a few others you may choose to add later today.
+
+            **Link**: requires the addition of an `href` *attribute* to specify where to link to.
+            
+            ```
+            &lt;a href=&quot;http://website.com&quot;&gt;link&lt;/a&gt;
+            ```
+
+            **Lists**: There are two kinds of lists: ordered (`ol`) for numbered lists & undordered (`ul`) for lists with bullets. Content must be included only within the list item (`li`).
+            
+            ```xml
+            &lt;ul&gt;
+                &lt;li&gt;Unordered list item&lt;/li&gt;
+                &lt;li&gt;Unordered list item&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;ol&gt;
+                &lt;li&gt;Ordered list item&lt;/li&gt;
+                &lt;li&gt;Ordered list item&lt;/li&gt;
+            &lt;/ol&gt;
+            ```
+            **Images**: like links, also requires the an additional attribute, `src`, for linking to the image file.
+
+            ```
+            &lt;img src=&quot;path/to/image.jpg&quot;&gt;
+            ```
+
+            More resources here:  [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/), [HMTL5Doctor](http://html5doctor.com/element-index/) 
+        </section>
+        
+        <section class="slide" data-markdown>
+            ##Exercise #1: Personalize the existing content (15 mins)
+            
+            When we move into CSS, we will be styling the existing tags so let's not stray away from the current layout too much (for now).
+
+            1. Update the `h1` and `h2` content.
+            2. Update the paragraph. Feel free to add a couple more!
+            3. You can update the quote but ensure that the `blockquote` tag is still being used.
+
+            Don't worry about what it **looks** like.  We'll be using CSS to change colours, sizing, fonts etc.  Right now you will just see the default HTML styles.
+
+            Don't know what to say yet? Add some placeholder content: http://meettheipsums.com
+    
+            **Pro tip!** Improve your work flow with keyboard shortcuts. [Here's a cheat sheet](project/keyboard-shortcuts.txt), also located in your project folder.
+        </section>
+
+        <section class="slide title" data-markdown>
+            #CSS
+            ##Cascading Style Sheets
+        </section>
+        
+        <section class="slide" data-markdown>
+            ##CSS Syntax & Terminology
+
+            Though there are some default styles attached to various HTML tags, it should be used to define the *content*. CSS defines the *presentation* and is the language used to make your site look any way you want!
+
+            **Selectors** are used to determine which element(s) to apply the styles to.  
+            **Declarations** are written using `property:value` pairs and contained within a pair curly braces `{}`.
+
+            ```css
+            selector {
+                property: value;
+            }
+            ```
+            **Properties** determine the type of style to be applied to
+            the element (e.g. color) and follow by a colon (`:`).  
+            **Values** are specific to the property. Must end with a semi-colon (`;`).
+            
+            ```css
+            h1 {
+                font-size: 40px;
+            }
+            ```
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Comments
+            
+            Comments are great for leaving notes for yourself (or others), organizing your code blocks or for "commenting" out your code (hiding it for later). Note they syntax below:
+            
+            ```
+            p {
+                color: #B109AA; /* LLC purple */
+            }
+
+            /* HEADER STYLES */
+            header {
+                width: 80%;
+            }
+
+            /*  Saving this for later
+            .slider {
+                width: 100px;
+                background: red;
+            }
+            */ 
+            ``` 
+        </section>
+
+        <section class="slide" data-markdown>
+##Where Does the CSS Go?
+
+You can add CSS to your web page in many ways. Today we're going to put the CSS in it's own document, in a linked/external style sheet.
+
+Referenced in the `&lt;head>` element with a `&lt;link&gt;` tag and two **attributes**, `rel` and `href`. The value of the `href` points to the location of the style sheet.
+
+```
+&lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+&lt;/head&gt;
+```
+There's already a `styles.css` file in your project folder. Let's link it in our HTML page.
+
+**Pro tip!**  Sublime Text shortcut: type "link" + tab key. Ta da!
+    </section>
+
+        <section class="slide" data-markdown>
+            ##Class & ID attributes
+            
+            When **type selectors** are too general (targeting the HTML element), HTML gives us two ways to attach extra identifying information to target specific elements with two **attributes**, `class` (can be used multiple times) and `id` (can only be used once per page).  
+
+            ``` 
+            /* targets ALL parapraphs */
+            p {
+                color: blue;
+            }
+            /* only applies to the element that contains this class, defined by leading period */
+            .danger {
+                color: red;
+            }
+            /* only applies to the element that contains this id, defined by number symbol  */
+            #danger {
+                border: 1px solid red;
+            }
+            ```
+
+            ```xml   
+            &lt;p&gt;Regular text.&lt;/p&gt;
+&lt;p class=&quot;danger&quot;&gt;Red error message text or some other dangerous text.&lt;/p&gt;
+&lt;div id="danger"&gt;Will display a red border.&lt;/div&gt;
+            ```
+        </section>
+
+        <section class="slide">
+            <h2>Syntax Highlighting</h2>
+            <p>Code highlighting is provided by <a href="http://highlightjs.org">highlight.js</a> and will be applied to any code wrapped in <code>&lt;pre>&lt;code>&lt;/code>&lt;/pre></code>. The syntax highlighting theme files can be found in <strong>framework > css > highlightjs-themes</strong>. If you wish to change it, add the css file there and update the css link. Visit <a href="http://highlightjs.org">highlight.js</a> to see the full list of supported languages, themes and other usage information.</p>
+
+            <h3>JavaScript</h3>
+<pre><code>var greeting = "Hello!";
+
+function sayHello() {
+    console.log(greeting);
+}
+
+sayHello();
+</code></pre>
+
+            <h3>CSS</h3>
+<pre><code>body {
+    margin: 0;
+    padding: 0;
+}</code></pre>
+
+            <p>For HTML, the left tag, <code><</code>, needs to be escaped. Sometimes for HTML snippets, the plugin, may not register it properly as HTML.  If that is the case, add an <code>.xml</code> class to the <code>pre</code> tag. Here's an online escape tool: <a href="http://www.htmlescape.net/htmlescape_tool.html">http://www.htmlescape.net/htmlescape_tool.html</a></p>
+
+            <h3>HTML</h3>
+            <pre><code>&lt;!DOCTYPE html>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html></code></pre>
+        </section>
+
+        <section class="slide" data-markdown>
+##Markdown example
+
+Write in Markdown! Include the `data-markdown` attribute in the sectin tag. See the [documentation for markdown syntax](http://daringfireball.net/projects/markdown/).  Both text and code blocks are supported at this time.
+
+Code blocks need to be denoted either by three backticks (`) or by tabbing the content in one indent (at least 4 spaces).  **Tabbing to create a code block won't work in this slide deck if your content begins tabbed in in your source code.** 
+
+Also, if you need to use any HTML, the entire slide has to be written in HTML and the markdown syntax will no longer work.
+
+You can specify the language of the code block by following the three backticks immediately by the language name.  View the source to see this in action.
+
+#### Javascript Example
+
+```javascript
+var myJSVariable = "Syntax Highting for Javascript";
+```
+
+#### CSS Example
+
+```css
+.css-selector{
+    highlight : syntax;
+}
+```
+
+#### HTML Example
+For HTML, set `xml` as the language to get nicer syntax highlighting.  Also, the left angled bracket of the HTML tag needs to be escaped. Here's a handy tool for creating escaped result with HTML entities: http://www.htmlescape.net/htmlescape_tool.html
+
+```xml
+&lt;header>
+    &lt;h1>I'm an H1!&lt;/h1>
+    &lt;p>This is a paragraph&lt;/p>
+&lt;/header>
+
+```
+#### indented example
+
+    code block that has to guess at the language and likely gets it wrong.  It thinks this is applescript.
+
+        </section>
+      
+        <section class="slide">
+            <h2>Incremental display of content</h2>
+            <p>Use the arrow keys to reveal each line.  To use, just add a <code>class="delayed"</code>.</p>
+            <ul>
+                <li class="delayed">Make sure your computer is setup</li>
+                <li class="delayed">Web development breakdown</li>
+                <li class="delayed">Dive into HTML</li>
+                <li class="delayed">CSS fundamentals</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>CSS demos</h2>
+            <p>You can include in-slide CSS demos. In this example, The whole slide will get the CSS applied to it. Go ahead, add/change/remove some CSS!</p>
+
+            <textarea class="snippet">background-color: lightblue;
+font-family: "Times New Roman", serif;</textarea>
+
+            <p>Just add the CSS to a <code>textarea</code> with a class of <code>.snippet</code>. (View the source for this slide.)</p>
+        </section>
+
+        <section class="slide">
+            <h2>More CSS demos</h2>
+            <p>You can also target specific elements rather than the whole slide.</p>
+            <textarea class="snippet" data-subject="#test">color: slateblue;
+font-family: "Times New Roman", serif;
+padding: 20px;</textarea>
+            <div id="test" class="example">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt sint beatae dolor dolorum aliquid quis explicabo vitae numquam, quas illo dolore molestiae ratione, perferendis, deleniti nemo ea voluptatibus! Quibusdam.</p>
+            </div>
+
+            <p>Just like the previous example, the CSS is added in a <code>textarea</code> element but also include a <code>data-subject</code> attribute.</p>  
+
+            <p>In the element to be targeted, add an <code>id</code> with a value that matches the <code>data-subject</code> of the  <code>textarea</code> and add a class of <code>.example</code> to add the border style. (View the source for this slide.)</p>
+        </section>
+
+        <section class="slide">
+            <h2>Presentation mode</h2>
+
+            <p>This slide has presenter notes. They are only visible in presenter view (Ctrl+P or Shift+P).  Just add the <code>.presenter-notes</code> class to the element container the notes.
+
+            <p>Check out the notes in this slide!</p>
+
+            <p class="presenter-notes">
+                Notes! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt soluta sit maiores nihil doloribus tempore dolor debitis a repudiandae recusandae natus officia, ad asperiores quaerat facilis nobis illo alias? Quaerat.
+            </p>
+        </section>
+
+        <section class="slide" data-markdown>
+            ##CSS Customizations
+
+            The CSS for this template is written in [Sass](http://sass-lang.com/).  For your forked copy of these slides, feel free to use either Sass or the compiled CSS files. Just note that if you pull in any styles updates from the repo, the CSS files will be recompiled.
+
+            If you want to change the intro slide background image (or not use an image at all), change the style using the `.intro` class.
+
+            The text in the slide can automatically scale based on window size. If you want to turn this feature "on" or off", in **framework > sass > _variables.scss** under font sizes, use the `rem` values for scalable text and `px` values for non-scalable text. (You can still zoom in with the pixel sized text.)
+            
+            Avoid changing the base styles files (`_mixins.scss`, `_variables.scss` and `theme-llc.scss`). Put all of your customizations and workshop specific styles in workshop.scss.  If you'd like to add an improvement or enhancement, please submit a pull request or email [christina@ladieslearningcode.com](mailto:christina@ladieslearningcode.com).
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Other Customizations
+
+            The progress bar at the top of the page can be defined by adding the presentation duration, in minutes, in the `data-duration` attribute on the `body` tag.  If you do not want to use it at all, leave the value empty.
+
+            The text in the slide can automatically scale based on window size. If you want to turn this feature "on" or off", in **framework > sass > _variables.scss** under font sizes, use the `rem` values for scalable text and `px` values for non-scalable text. (You can still zoom in with the pixel sized text.)
+
+            Since most, if not all, links included in the workshops are to external resources, all links open in a new window to avoid participants clicking away from the slide presentations.  Note that this feature is included using `&lt;base target="_blank"&gt;` added just after the opening `body` tag. 
+
+            (See more about the [`base`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base) tag.)
+        </section>
+
+        <!-- Last slide -->
+        <section class="slide last">
+            <h2>Thank you!</h2>
+
+            <h2 class="heading-bg">
+                <span>Title of Workshop</span><br>
+                <span>Second line</span>
+            </h2>
+            <h3><span>with</span> Instructor Name</h3>
+
+             <img class="instructor-img" src="framework/img/profile-generic.jpg" alt="instructor name">
+            <ul>
+                <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</li>
+                <li><i class="fa fa-desktop"></i><a href="#">mywebsite.com</a></li>
+                <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter</a></li>
+            </ul>
+
+            <p class="attribution">Slide presentation created with <a href="https://github.com/LeaVerou/csss">Lea Verou's CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
+        </section>
+
+    </main><!-- cls main section -->
+
+    <footer>
+        <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.svg" /></a> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
+    </footer>
+    
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="framework/scripts/slideshow.js"></script>
+
+    <!-- Uncomment the plugins you need -->
+    <script src="framework/scripts/plugins/css-edit.js"></script>
+    <script src="framework/scripts/plugins/css-snippets.js"></script>
+    <script src="framework/scripts/plugins/css-controls.js"></script>
+    <!-- <script src="plugins/code-highlight.js"></script>-->
+
+    <script src="framework/scripts/plugins/markdown/marked.js"></script>
+    <script src="framework/scripts/plugins/markdown/markdown.js"></script>
+    <!-- <script src="framework/scripts/plugins/highlight/highlight.js"></script> -->
+    <script src="framework/scripts/plugins/highlight/highlight-8.4.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <script>
+        var slideshow = new SlideShow();
+
+        // Grabs all the .snippet elements
+        var snippets = document.querySelectorAll('.snippet');
+        for(var i=0; i<snippets.length; i++) {
+            new CSSSnippet(snippets[i]);
+        }
+
+        // Adds "edit me" note to editable code areas
+        jQuery(document).ready(function(){
+            jQuery(".snippet").before("<span class=\"edit\">edit me</span>");
+        });
+    </script>
+</body>
+</html>
