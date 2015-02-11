@@ -41,11 +41,6 @@
                 <span class="light">PASSWORD: Thisisthelab</span>
             </div>
         </div>
-
-        <div class="sponsor">
-            <p>In partnership with:</p>
-            <img src="framework/img/telus-logo-white.svg" height="75" alt="Telus">
-        </div>
     </header>
 
     <!-- Instructor info -->
@@ -71,10 +66,8 @@
         <section class="slide centered">
             <h2>Today's Project</h2>    
             <p data-height="625" data-theme-id="0" data-slug-hash="KwyGgY" data-default-tab="result" data-user="learningcode" class='codepen'>See the Pen <a href='http://codepen.io/learningcode/pen/KwyGgY/'>KwyGgY</a> by Ladies Learning Code (<a href='http://codepen.io/learningcode'>@learningcode</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-            <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+            <script async src="http://assets.codepen.io/assets/embed/ei.js"></script>
         </section>
-
-        <section class="slide"></section>
 
         <section class="slide" data-markdown>
             ##Setting Up Our Dev Tools
@@ -177,7 +170,7 @@
             ```
         </section>
 
-        <section class="slide" data-markdown>
+        <!-- <section class="slide" data-markdown>
             ##HTML tags
 
             Here are a few others you may choose to add later today.
@@ -207,7 +200,7 @@
             ```
 
             More resources here:  [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/), [HMTL5Doctor](http://html5doctor.com/element-index/) 
-        </section>
+        </section> -->
         
         <section class="slide" data-markdown>
             ##Exercise #1: Personalize the existing content (15 mins)
@@ -391,7 +384,7 @@ color: #222222;</textarea>
 
             ![](http://cl.ly/image/0h1i1q1j0Q2E/Image%202015-02-09%20at%205.13.38%20PM.png)
 
-            Let's add it using a `span` tag.
+            Let's add it using a `span` tag. See example below:
 
             ```xml
             &lt;span&gt;&amp;#9829;&lt;/span&gt;
@@ -538,7 +531,7 @@ margin: 0 0 0 0;</textarea>
         }
         ```
 
-        Better but the text still doesn't wrap in the circular shape of the icon. Why is that? Because by default, the browser views every element as a box or rectangular shape.  However, there is some experimental CSS that can be used to handle this.
+        Better! But the text still doesn't wrap in the circular shape of the icon. Why is that? Because by default, the browser views every element as a box or rectangular shape.  However, there is some experimental CSS that can be used to handle this.
         </section>
 
         <section class="slide" data-markdown>
@@ -546,85 +539,236 @@ margin: 0 0 0 0;</textarea>
             
             From [HTML5 Rocks](http://www.html5rocks.com/en/tutorials/shapes/getting-started/):
 
-            "CSS Shapes allow web designers to wrap content around custom paths, like circles, ellipses and polygons, thus breaking free from the constraints of the rectangle.
+            >CSS Shapes allow web designers to wrap content around custom paths, like circles, ellipses and polygons, thus breaking free from the constraints of the rectangle.
             
-            Shapes can be defined manually or they can be inferred from images."
+            >Shapes can be defined manually or they can be inferred from images.
 
             It doesn't work in all browsers just yet, but it still nice to add this enhancement for the browsers that do. Here's a great resource for checking which features are supported by various browsers:
 
             http://caniuse.com/#search=shape-outside
+
+        </section>
+
+        <section class="slide">
+            <h2>CSS Shapes Demo</h2>
+<textarea class="snippet" data-subject="#test">.circle { 
+  background: lightblue;
+  width: 235px;
+  height: 235px;
+  float: left;
+  /* shape-outside: circle(50%); */
+  /* -webkit-clip-path: circle(50%); */
+}</textarea>
+            <div id="test" class="example">
+                <div class="circle"></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt sint beatae dolor dolorum aliquid quis explicabo vitae numquam, quas illo dolore molestiae ratione, perferendis, deleniti nemo ea voluptatibus! Quibusdam.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt sint beatae dolor dolorum aliquid quis explicabo vitae numquam, quas illo dolore molestiae ratione, perferendis, deleniti nemo ea voluptatibus! Quibusdam. </p>
+            </div>
         </section>
       
-        <section class="slide">
-            <h2>Incremental display of content</h2>
-            <p>Use the arrow keys to reveal each line.  To use, just add a <code>class="delayed"</code>.</p>
-            <ul>
-                <li class="delayed">Make sure your computer is setup</li>
-                <li class="delayed">Web development breakdown</li>
-                <li class="delayed">Dive into HTML</li>
-                <li class="delayed">CSS fundamentals</li>
-            </ul>
+        <section class="slide" data-markdown>
+##CSS Shapes: Polygon
+
+Since our love bomb it not quite a circle, we'll have to use `shape-outside: polygon()` instead.
+
+`polygon()` is used to defines more complex shapes using any number of points by declaring a set of coordinate pairs. The set of points make up the shape.
+
+Since this is only a 3hr session, I've taken the liberty of working out the coordinates for you!  Let's put this in our project, and then *inspect* the element to see how it works.
+
+```css
+.fa-bomb {
+    font-size: 190px;
+    float: left;
+    shape-outside: polygon(0px 55px, 0 198px, 130px 205px, 168px 122px,
+                   165px 55px, 210px 45px, 209px 0px, 150px 0px);
+}
+```
         </section>
-
-        <section class="slide">
-            <h2>CSS demos</h2>
-            <p>You can include in-slide CSS demos. In this example, The whole slide will get the CSS applied to it. Go ahead, add/change/remove some CSS!</p>
-
-            <textarea class="snippet">background-color: lightblue;
-font-family: "Times New Roman", serif;</textarea>
-
-            <p>Just add the CSS to a <code>textarea</code> with a class of <code>.snippet</code>. (View the source for this slide.)</p>
-        </section>
-
-        <section class="slide">
-            <h2>More CSS demos</h2>
-            <p>You can also target specific elements rather than the whole slide.</p>
-            <textarea class="snippet" data-subject="#test">color: slateblue;
-font-family: "Times New Roman", serif;
-padding: 20px;</textarea>
-            <div id="test" class="example">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt sint beatae dolor dolorum aliquid quis explicabo vitae numquam, quas illo dolore molestiae ratione, perferendis, deleniti nemo ea voluptatibus! Quibusdam.</p>
-            </div>
-
-            <p>Just like the previous example, the CSS is added in a <code>textarea</code> element but also include a <code>data-subject</code> attribute.</p>  
-
-            <p>In the element to be targeted, add an <code>id</code> with a value that matches the <code>data-subject</code> of the  <code>textarea</code> and add a class of <code>.example</code> to add the border style. (View the source for this slide.)</p>
-        </section>
-
-        <section class="slide">
-            <h2>Presentation mode</h2>
-
-            <p>This slide has presenter notes. They are only visible in presenter view (Ctrl+P or Shift+P).  Just add the <code>.presenter-notes</code> class to the element container the notes.
-
-            <p>Check out the notes in this slide!</p>
-
-            <p class="presenter-notes">
-                Notes! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt soluta sit maiores nihil doloribus tempore dolor debitis a repudiandae recusandae natus officia, ad asperiores quaerat facilis nobis illo alias? Quaerat.
-            </p>
+        
+        <section class="slide title" data-markdown>
+            #CSS3 Animations!
         </section>
 
         <section class="slide" data-markdown>
-            ##CSS Customizations
+##Vendor Prefixes
+CSS vendor prefixes are used to add browser support for new and/or experimental features. Each browser uses its own prefix to render its own version of that property until the property becomes standardized across all browsers. 
 
-            The CSS for this template is written in [Sass](http://sass-lang.com/).  For your forked copy of these slides, feel free to use either Sass or the compiled CSS files. Just note that if you pull in any styles updates from the repo, the CSS files will be recompiled.
+Android, iOs, Chrome & Safari: `-webkit-`  
+Internet Explorer: `-ms-`  
+Firefox: `-moz-`  
+Opera: `-o-`
 
-            If you want to change the intro slide background image (or not use an image at all), change the style using the `.intro` class.
+The prefix gets applied to the property name like so:
 
-            The text in the slide can automatically scale based on window size. If you want to turn this feature "on" or off", in **framework > sass > _variables.scss** under font sizes, use the `rem` values for scalable text and `px` values for non-scalable text. (You can still zoom in with the pixel sized text.)
+`-webkit-property-name`  
+`-moz-property-name`  
+`-ms-property-name`  
+`-o-property-name`  
+        </section>
+        
+        <section class="slide" data-markdown>
+##Vendor Prefixes
+
+Vendor prefixes are temporary. As newer versions of browsers are released and these properties become part of the official, specifications, the prefixes are dropped. 
+
+To future proof your CSS, list the standard property last.  Browsers will ignore the properties it doesn't understand and move onto the next.
+
+```css
+-webkit-border-radius: 50%;
+border-radius: 50%;
+```
+
+Currently, only the standard `border-radius` is needed. Including it last will ensure the property gets implemented in the event that the specifications have changed after you've written the CSS rule.
+
+**Extra Resources:**
+
+* [http://caniuse.com](http://caniuse.com) - reference
+* [http://pleeease.io/play/](http://pleeease.io/play/) - tool
+* [http://css-tricks.com/how-to-deal-with-vendor-prefixes/](http://css-tricks.com/how-to-deal-with-vendor-prefixes/) - extra reading
+        </section>
+
+        <section class="slide" data-markdown>
+##CSS3 @keyframes
+
+To make a heart pulse effect, we need to find a way to tell the browser, make this element bigger, then smaller, then bigger, then smaller...
+
+To set multiple points for different transitions, use the `@keyframes` rule which includes an animation name, breakpoints and the properties to be animated. To create different breakpoints for the animations, use percentages (0% refers to the beginning of the animation, 100% is the end of an animation).
+
+    @keyframes animation-name {
+        0% { 
+            width: 100px; 
+        }
+        50% { 
+            width: 200px; 
+        }
+        100% { 
+            width: 100px; 
+        }
+    }
+        </section>
+    
+        <section class="slide" data-markdown>
+**Don't forget to check for prefix requirements!**
+    
+    @-webkit-keyframes animation-name  {
+      ...
+    }
+    @keyframes animation-name  {
+      ...
+    }
+
+**Note** that animations can include multiple properties but the animation can only be applied to the same property, **not** from one property to another. For example, animating from `top: 0;` to `bottom: 0;` will not work.  It must be from `top: 0;` to `top: 200px` or any other desired value but using the same property.
+        </section>
+
+        <section class="slide" data-markdown>
+            ##CSS3 Transform
+
+            The `transform` property can be used to add many effects like `skew`, `rotate` and [many more](http://learn.shayhowe.com/advanced-html-css/transitions-animations/).  Today we are going to use `scale` to create a pulsing heart by making it bigger and smaller. 
+
+            Let's use that to create our animation.
+
+            ```css
+            @-webkit-keyframes pulse {
+                0% {
+                    transform: scale(1);
+                }
+                100% {
+                    transform: scale(1.5);
+                }
+            }
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                }
+                100% {
+                    transform: scale(1.5);
+              }
+            }
+            ```
+        </section>
             
-            Avoid changing the base styles files (`_mixins.scss`, `_variables.scss` and `theme-llc.scss`). Put all of your customizations and workshop specific styles in workshop.scss.  If you'd like to add an improvement or enhancement, please submit a pull request or email [christina@ladieslearningcode.com](mailto:christina@ladieslearningcode.com).
+        <section class="slide" data-markdown>
+##Using the @keyframe animation
+
+The `@keyframes` rule just *creates* the animation but to use it, it much be assigned to an element and a couple more properties need to be declared to determine how the animation should play out.
+
+The `animation-name` property is required as well as the `animation-duration` property so the browser knows which animation should be executed and for how long an animation should take to complete.
+
+By default, animations run **once** from beginning to end. To repeat an animation, use the `animation-iteration-count` property. The values can be a number or the `infinite` keyword to repeat the animation indefinitely.
+
+    .to-be-animated {
+        animation-name: pulse;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+    }
+
+This can also be written in shorthand.
+
+    .to-be-animated {
+        animation: pulse 2s infinite;
+    }
         </section>
 
         <section class="slide" data-markdown>
-            ##Other Customizations
+            ##Class Exercise
 
-            The progress bar at the top of the page can be defined by adding the presentation duration, in minutes, in the `data-duration` attribute on the `body` tag.  If you do not want to use it at all, leave the value empty.
+            Let's put this all together and apply this pulse effect to our heart.  First, add a class name to specify which heart element to apply this effect to. Let's call it `heart-pulse`.  The CSS will resemble the sample below.
 
-            The text in the slide can automatically scale based on window size. If you want to turn this feature "on" or off", in **framework > sass > _variables.scss** under font sizes, use the `rem` values for scalable text and `px` values for non-scalable text. (You can still zoom in with the pixel sized text.)
+```css
+.heart-pulse {
+  -webkit-animation: pulse 2s infinite;
+  animation: pulse 2s infinite;
+}
 
-            Since most, if not all, links included in the workshops are to external resources, all links open in a new window to avoid participants clicking away from the slide presentations.  Note that this feature is included using `&lt;base target="_blank"&gt;` added just after the opening `body` tag. 
+@-webkit-keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
 
-            (See more about the [`base`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base) tag.)
+  100% {
+    transform: scale(1.5);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.5);
+  }
+}
+```
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Yay! It works!
+
+            But... it's kind of "jumpy".  Let's revise the breakpoint from 100% to 50% and see what happens.
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Class Exercise: Falling, Rotating Hearts
+
+            Let's take this animation stuff a little bit further and create some falling, rotating hearts.  
+
+            1. Add a bunch of hearts to the page and give it a class of `heart-falling`.
+            
+            1. Position the hearts at the top of the card so we can animate it falling down. (More about position here: [http://www.cssnewbie.com/all-about-css-positioning/](http://www.cssnewbie.com/all-about-css-positioning/))
+
+            1. Create a @keyframe animation to move the hearts from the top to bottom.
+
+            1. Rotate the hearts using `transform: rotate()`.
+
+            1. Vary the positioning of the hearts.
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Hack time & Codepen!
+
+            Let's use the remainder of the time to do whatever you want!  View the [Ladies Learning Code version on CodePen](index.html#slide3) for inspiration or ask your mentors (or Google)!
+
+            When complete, let's take a few moments to go over how to add your creation to Codepen. (It's mostly just copying and pasting).
         </section>
 
         <!-- Last slide -->
@@ -632,16 +776,16 @@ padding: 20px;</textarea>
             <h2>Thank you!</h2>
 
             <h2 class="heading-bg">
-                <span>Title of Workshop</span><br>
-                <span>Second line</span>
+                <span>Intro to HTML & CSS Animations</span><br>
+                <span>Valentine's Day Edition</span>
             </h2>
-            <h3><span>with</span> Instructor Name</h3>
+            <h3><span>with</span> Christina Truong</h3>
 
-             <img class="instructor-img" src="framework/img/profile-generic.jpg" alt="instructor name">
+            <img class="instructor-img" src="framework/img/workshop/christina-truong.jpg" alt="instructor name">
             <ul>
-                <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</li>
-                <li><i class="fa fa-desktop"></i><a href="#">mywebsite.com</a></li>
-                <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter</a></li>
+              <li><i class="fa fa-envelope"></i><a href="mailto:hello@christinatruong.com">hello@christinatruong.com</li>
+              <li><i class="fa fa-desktop"></i><a href="http://christinatruong.com">christinatruong.com</a></li>
+              <li><i class="fa fa-twitter"></i><a href="http://twitter.com/christinatruong">@christinatruong</a></li>
             </ul>
 
             <p class="attribution">Slide presentation created with <a href="https://github.com/LeaVerou/csss">Lea Verou's CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>

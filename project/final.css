@@ -21,7 +21,7 @@ main {
   padding: 50px 40px 60px 40px;
   margin-top: 90px;
 }
-
+/* Targets only firefox */
 @-moz-document url-prefix() {
   main {
     max-width: 700px;
@@ -31,14 +31,9 @@ h1 {
   font-size: 50px;
   margin: 0;
   color: #B109AA;
-}
-
-h1,
-blockquote p {
   font-family: 'Sacramento', cursive;
   line-height: 1;
 }
-
 h2 {
   margin-bottom: 12px;
 }
@@ -46,23 +41,19 @@ h2 {
 .fa-bomb {
   font-size: 190px;
   float: left;
-/*  width: 200px;
-  height: 200px;*/
   shape-outside: polygon(0px 55px, 0 198px, 130px 205px, 168px 122px, 165px 55px, 210px 45px, 209px 0px, 150px 0px);
 }
 
-/* QUOTE 
----------*/
 blockquote {
   clear: both;
   margin-top: 75px;
 }
-
 blockquote p {
   font-size: 32px;
   margin-bottom: 10px;
+  font-family: 'Sacramento', cursive;
+  line-height: 1;
 }
-
 cite {
   float: right;
 }
@@ -74,18 +65,12 @@ cite {
   font-size: 200px;
   opacity: .1;
   color: #B109AA;
-  /* LLC purple */
 }
 
 .heart-pulse {
   color: #B109AA;
-  transition: all .2s ease-in-out;
-  -webkit-animation-name: pulse;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-  animation-name: pulse;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
+  -webkit-animation: pulse 2s infinite;
+  animation: pulse 2s infinite;
 }
 
 .heart-falling {
@@ -93,14 +78,8 @@ cite {
   color: red;
   opacity: .5;
   font-size: 22px;
-  -webkit-animation-name: falling;
-  -webkit-animation-duration: 6s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  animation-name: falling;
-  animation-duration: 6s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  -webkit-animation: falling 6s infinite linear;
+  animation: falling 6s infinite linear;
 }
 .heart-falling:nth-of-type(1) {
   bottom: 1200px;
@@ -127,12 +106,10 @@ cite {
   left: 60%;
 }
 
-/* ANIMATIONS */
 @-webkit-keyframes pulse {
   0% {
     transform: scale(1);
   }
-
   50% {
     transform: scale(1.5);
   }
@@ -141,7 +118,6 @@ cite {
   0% {
     transform: scale(1);
   }
-
   50% {
     transform: scale(1.5);
   }
@@ -150,11 +126,9 @@ cite {
   0% {
     transform: rotate(360deg);
   }
-
   50% {
     transform: rotate(0deg);
   }
-
   100% {
     bottom: -25px;
     transform: rotate(-360deg);
@@ -164,16 +138,12 @@ cite {
   0% {
     transform: rotate(360deg);
   }
-
   50% {
     transform: rotate(0deg);
   }
-
   100% {
     bottom: -25px;
     transform: rotate(-360deg);
   }
 }
-/* MEDIA QUERIES */
 
-/*# sourceMappingURL=main.css.map */
