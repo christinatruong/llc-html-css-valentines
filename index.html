@@ -679,403 +679,337 @@ color: #222222;</textarea>
         We'll animate it in a later exercise, to make it look like it's pulsing!
       </script>
     </section>
-    
+        
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #CSS3 Animations!
+        
+        ##<span class="heart-pulse">&#9829;</span>
+        
+        <span class="heart-falling">&#9829;</span>
+        <span class="heart-falling">&#9829;</span>
+        <span class="heart-falling">&#9829;</span>
+        <span class="heart-falling">&#9829;</span>
+        <span class="heart-falling">&#9829;</span>
+        <span class="heart-falling">&#9829;</span>
+      </script>
+    </section>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-            #Icon Fonts
-            Similar to Google Fonts, there are services that allow you to link to their style sheet and use their icon fonts, for free!  Let's check out [Font Awesome](http://fortawesome.github.io/Font-Awesome/) for today's project.
+        #CSS3 @keyframes
 
-            Go to **Get Started** and add the Font Awesome CSS file to the head of your HTML document.
+        To make a heart pulse effect, we need to tell the browser, "Make this element bigger, then smaller, then bigger, then smaller..."
 
-            Then under **Icons** we can select which icons to use. It will then take you to the page for that specific icon, copy the HTML markup and add it to your project.  Here's an example of the bomb icon:
-
-            http://fortawesome.github.io/Font-Awesome/icon/bomb/
-            
-            ```xml
-            <i class="fa fa-bomb"></i>
-            ```
-
-            More about the `i` element: http://html5doctor.com/i-b-em-strong-element/
-      </script>
-    </section> 
-     
-
-        <section class="slide">
-            <h2>Class Exercise</h2>
-            <p>Let's style our love bomb!</p>
-            <ol>
-                <li>Adjust the font size using a class. Which class will target the icon?
-<pre><code class="delayed">.fa-bomb {
-  font-size: 190px;
-}
-</code></pre>
-                </li>
-                <li class="delayed">Let's float it to the left of our headings and paragraphs.
-<pre><code>.fa-bomb {
-  font-size: 190px;
-  float: left;
-}
-</code></pre>
-                </li>
-            </ol>
-            <p class="delayed"><a href="http://css-tricks.com/all-about-floats/">All about floats here</a>.</p>
-      </script>
-    </section> 
-
-        <section class="slide side-by-side" data-markdown>
-            #Margin, Padding & CSS Shapes
-            
-            This image on the left is what our project currently looks like.  Notice how the spacing is different in the final project and the text also wraps around the love bomb a little nicer?
-
-            ![](http://cl.ly/image/0G2x0n1U3x1k/Image%202015-02-09%20at%205.54.42%20PM.png)
-            ![](http://cl.ly/image/2w292E0e1a1s/Image%202015-02-09%20at%205.55.23%20PM.png)
-      </script>
-    </section> 
-            
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #The Box Model
-
-Margins, padding, widths, and borders.
-
-![](http://cl.ly/image/131G2C1n3b1v/Image%202015-02-09%20at%206.09.11%20PM.png)
-
-This snippet is the fix for the way the box model handles the sizing of elements and is already included in your project CSS file.
-
-```css
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-```
-
-More info about this fix here: [http://www.paulirish.com/2012/box-sizing-border-box-ftw/](http://www.paulirish.com/2012/box-sizing-border-box-ftw/)
-
-
-      </script>
-    </section> 
-
-        <section class="slide">
-            <h2>Padding and Margin</h2>
-
-            <p>The <code>padding</code> and <code>margin</code> can both be declared using similar syntax of 1 to 4 values. Values can be declared using different measurement units but pixels or percentages are most commonly used. Setting the value to "0" will <strong>remove</strong> any default space on an HTML element. Any positive value will <strong>add</strong> space.</p>
-
-            <ul>
-                <li>4 values means top, right, bottom, left</li>
-                <li>3 values means top, right & left, bottom</li>
-                <li>2 values means top & bottom, right & left</li>
-                <li>1 value means the same amount of padding on all sides</li>
-            </ul>
-            
-            <p>Change some values to see the difference between margin and padding. Trying using 1 - 4 values. Let's also inspect the element using Chrome's Developer tool.</p>
-
-            <textarea class="snippet" data-subject="#padding">background: lightblue; 
-padding: 0 0 0 0;
-margin: 0 0 0 0;</textarea>
-            <p id="padding">padding and margin test</p>
-      </script>
-    </section> 
-    <section class="slide" data-markdown>
-      <script type="text/template">
-            #Padding and Margin (continued)
-            The previous slide uses the shorthand properties. Both can also be declared by specifying a particular side.
-
-            ```
-            padding-top: 10px;
-            padding-right: 10px;
-            padding-bottom: 10px;
-            padding-left: 10px;
-            ```
-            ```
-            margin-top: 10px;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            margin-left: 10px;
-            ```
-      </script>
-    </section> 
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #Class exercise
-
-        Let's adjust some of the default space in the headings.
+        Use the `@keyframes` rule to apply time-based styles. Declare an animation name and breakpoints where the properties will be animated. 
+        
+        To create different breakpoints, use percentages (0% refers to the beginning of the animation, 100% is the end of an animation).
         
         ```css
-        h1 {
-            margin: 0;
-        }
-        h2 {
-            margin-bottom: 12px;
+        @keyframes animation-name {
+          0% {  /* start */
+            width: 10px;
+          }
+          100% { /* end */
+            width: 100px;
+          }
         }
         ```
-
-        Better! But the text still doesn't wrap in the circular shape of the icon. Why is that? Because by default, the browser views every element as a box or rectangular shape.  However, there is some experimental CSS that can be used to handle this.
       </script>
     </section> 
 
     <section class="slide" data-markdown>
       <script type="text/template">
-            #CSS Shapes
+        #Class Exercise: CSS3 Transform
+
+        The `transform` property can be used to add many effects like `skew`, `rotate` and [many more](http://learn.shayhowe.com/advanced-html-css/transitions-animations/).  
+        
+        Today we'll use `scale` to create a pulsing heart. 
+        
+        ```css
+        @keyframes pulse {
+          0% { /* starts at half of its size */
+            transform: scale(0.5);
+          }
+          100% { /* scales to its full size */
+            transform: scale(1);
+          }
+        }
+        ```
+      </script>
+    </section> 
             
-            From [HTML5 Rocks](http://www.html5rocks.com/en/tutorials/shapes/getting-started/):
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Using the @keyframe animation
 
-            >CSS Shapes allow web designers to wrap content around custom paths, like circles, ellipses and polygons, thus breaking free from the constraints of the rectangle.
+        The `@keyframes` rule just *creates* the animation. To use it, it must be assigned to an element using the *animation name* and *duration*, so the browser knows how long an animation should take.
+        
+        ```
+        .heart-pulse {
+          animation-name: pulse;
+          animation-duration: 2s;
+        }
+        ```
+        This can also be written in shorthand.
+        
+        ```
+        .heart-pulse {
+          animation: pulse 2s;
+        }
+        ```
+      </script>
+    </section> 
             
-            >Shapes can be defined manually or they can be inferred from images.
-
-            It doesn't work in all browsers just yet, but it still nice to add this enhancement for the browsers that do. Here's a great resource for checking which features are supported by various browsers:
-
-            http://caniuse.com/#search=shape-outside
-
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Using the @keyframe animation
+        
+        By default, animations run *once* from beginning to end. 
+        
+        To repeat an animation, use the `animation-iteration-count` property with a number value or `infinite` to repeat the animation indefinitely.
+        
+        ```
+        .heart-pulse {
+          animation-name: pulse;
+          animation-duration: 2s;
+          animation-iteration-count: infinite;
+        }
+        ```
+        Here it is in shorthand.
+        
+        ```
+        .heart-pulse {
+            animation: pulse 2s infinite;
+        }
+        ```
       </script>
     </section> 
 
-        <section class="slide">
-            <h2>CSS Shapes Demo</h2>
-<textarea class="snippet" data-subject="#test">.circle { 
-  background: lightblue;
-  width: 235px;
-  height: 235px;
-  float: left;
-  /* shape-outside: circle(50%); */
-  /* -webkit-clip-path: circle(50%); */
-}</textarea>
-            <div id="test" class="example">
-                <div class="circle"></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt sint beatae dolor dolorum aliquid quis explicabo vitae numquam, quas illo dolore molestiae ratione, perferendis, deleniti nemo ea voluptatibus! Quibusdam.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt sint beatae dolor dolorum aliquid quis explicabo vitae numquam, quas illo dolore molestiae ratione, perferendis, deleniti nemo ea voluptatibus! Quibusdam. </p>
-            </div>
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Pulsing heart
+
+        Let's put this all together and apply this effect to the heart we added earlier.  
+        
+        ```xml
+        <span class="heart-pulse">&#9829;</span>
+        ```
+        
+        Because the heart is in a `span` tag, we'll need to add an additional property, `display` to get it to apply the sizing properly.  See the resource below for more info.
+        
+
+        ```css
+        .heart-pulse {
+          animation: pulse 2s infinite;
+          display: inline-block;
+        }
+
+        @keyframes pulse {
+          0% {
+            transform: scale(0.5);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+        ```
+        ###Resource: More about [display](https://css-tricks.com/almanac/properties/d/display/).
       </script>
     </section> 
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: More Breakpoints
+
+        Yay! It works! But... it's kind of "jumpy".  Remember, we want to make the element bigger, then smaller, then bigger, then smaller...
+        
+        Add a half-way point. Let's update our CSS!  Feel free to revise your scale values too!
+
+        ```css
+        @keyframes pulse {
+          0% { /* starts small */
+            transform: scale(0.5);
+          }
+          50% { /* halfway point - gets bigger */
+            transform: scale(1);
+          }
+          100% { /* end - goes back to starting size */
+            transform: scale(0.5);
+          }
+        }
+        ```
+        
+      </script>
+    </section> 
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Important!
+        
+        Animations can include multiple properties but the animation can only be applied to the *same* property, **not** from one property to another. 
+        
+        For example, animating from `top: 0;` to `bottom: 0;` will not work.  
+        
+        It must be from `top: 0;` to `top: 200px` or any other desired value but using the same property.
+        
+      </script>
+    </section> 
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Falling, Rotating Hearts - Step 1
+
+        Let's take this animation stuff a little bit further and create some falling, rotating hearts. 
+        
+        Add a bunch of hearts to the page and give it a class of `heart-falling`. Let's add it right under the `<main>` tag.
+        
+        ```xml
+        <main>
+          <span class="heart-falling">&#9829;</span>
+          <span class="heart-falling">&#9829;</span>
+          <span class="heart-falling">&#9829;</span>
+          <span class="heart-falling">&#9829;</span>
+          <span class="heart-falling">&#9829;</span>
+          <span class="heart-falling">&#9829;</span>
+          
+          ...
+        </main>
+        ```
+      </script>
+    </section> 
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Position and :nth-of-type
+
+        Next, we'll use the CSS `position` property to make the hearts appear to be moving from top to bottom at different heights. 
+        
+        We'll also be using *psuedo-class*, `:nth-of-type` to select specific hearts.
+        
+        ---
+        These are more advanced CSS concepts that require a bit more discussion. For today, we'll provide the code for you to update but you can see more info here:
       
-    <section class="slide" data-markdown>
-      <script type="text/template">
-#CSS Shapes: Polygon
-
-Since our love bomb it not quite a circle, we'll have to use `shape-outside: polygon()` instead.
-
-`polygon()` is used to defines more complex shapes using any number of points by declaring a set of coordinate pairs. The set of points make up the shape.
-
-Since this is only a 3hr session, I've taken the liberty of working out the coordinates for you!  Let's put this in our project, and then *inspect* the element to see how it works.
-
-```css
-.fa-bomb {
-    font-size: 190px;
-    float: left;
-    shape-outside: polygon(0px 55px, 0 198px, 130px 205px, 168px 122px,
-                   165px 55px, 210px 45px, 209px 0px, 150px 0px);
-}
-```
-      </script>
-    </section> 
-        
-        <section class="slide title" data-markdown>
-            #CSS3 Animations!
-      </script>
-    </section> 
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-#Vendor Prefixes
-CSS vendor prefixes are used to add browser support for new and/or experimental features. Each browser uses its own prefix to render its own version of that property until the property becomes standardized across all browsers. 
-
-Android, iOs, Chrome & Safari: `-webkit-`  
-Internet Explorer: `-ms-`  
-Firefox: `-moz-`  
-Opera: `-o-`
-
-The prefix gets applied to the property name like so:
-
-`-webkit-property-name`  
-`-moz-property-name`  
-`-ms-property-name`  
-`-o-property-name`  
-      </script>
-    </section> 
-        
-    <section class="slide" data-markdown>
-      <script type="text/template">
-#Vendor Prefixes
-
-Vendor prefixes are temporary. As newer versions of browsers are released and these properties become part of the official, specifications, the prefixes are dropped. 
-
-To future proof your CSS, list the standard property last.  Browsers will ignore the properties it doesn't understand and move onto the next.
-
-```css
--webkit-border-radius: 50%;
-border-radius: 50%;
-```
-
-Currently, only the standard `border-radius` is needed. Including it last will ensure the property gets implemented in the event that the specifications have changed after you've written the CSS rule.
-
-**Extra Resources:**
-
-* [http://caniuse.com](http://caniuse.com) - reference
-* [http://pleeease.io/play/](http://pleeease.io/play/) - tool
-* [http://css-tricks.com/how-to-deal-with-vendor-prefixes/](http://css-tricks.com/how-to-deal-with-vendor-prefixes/) - extra reading
-      </script>
-    </section> 
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-#CSS3 @keyframes
-
-To make a heart pulse effect, we need to find a way to tell the browser, make this element bigger, then smaller, then bigger, then smaller...
-
-To set multiple points for different transitions, use the `@keyframes` rule which includes an animation name, breakpoints and the properties to be animated. To create different breakpoints for the animations, use percentages (0% refers to the beginning of the animation, 100% is the end of an animation).
-
-    @keyframes animation-name {
-        0% { 
-            width: 100px; 
-        }
-        50% { 
-            width: 200px; 
-        }
-        100% { 
-            width: 100px; 
-        }
-    }
+        More about `position` [here](http://www.cssnewbie.com/all-about-css-positioning/) and `:nth-of-type` [here](https://css-tricks.com/almanac/selectors/n/nth-of-type/).
       </script>
     </section> 
     
     <section class="slide" data-markdown>
       <script type="text/template">
-**Don't forget to check for prefix requirements!**
+        #Class Exercise: Falling, Rotating Hearts - Step 2
+        
+        Add `position: absolute;` to the `.heart-falling` class. 
+        
+        This will make it possible to move the hearts from top to bottom, regardless of where it is in the HTML.
+        
+        ```
+        .heart-falling {
+          position: absolute;
+        }
+        ```
+      </script>
+    </section> 
     
-    @-webkit-keyframes animation-name  {
-      ...
-    }
-    @keyframes animation-name  {
-      ...
-    }
-
-**Note** that animations can include multiple properties but the animation can only be applied to the same property, **not** from one property to another. For example, animating from `top: 0;` to `bottom: 0;` will not work.  It must be from `top: 0;` to `top: 200px` or any other desired value but using the same property.
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Falling, Rotating Hearts - Step 3
+      
+        Now, let's use `left` and `bottom` to position each heart to a different spot on the page or else they will all be position in the same spot.
+        
+        Remember, we can't say "top to bottom" so we'll animate the `bottom` property.  
+        
+        Some hearts may appear to be "off screen" but that's okay.  The value is just larger than the height of your browser window.  It will re-appear when the animation is applied.
+        
+         `.heart-falling:nth-of-type(1)` selects the first heart, `.heart-falling:nth-of-type(2)` selects the second and so on.
+        ```
+        .heart-falling:nth-of-type(1) {
+          bottom: 1200px;
+          left: 2%;
+        }
+        .heart-falling:nth-of-type(2) {
+          bottom: 500px;
+          left: 15%;
+        }
+        ...
+        ```
+        
       </script>
     </section> 
 
     <section class="slide" data-markdown>
       <script type="text/template">
-            #CSS3 Transform
+      #Class Exercise: Falling, Rotating Hearts - Step 4
+      
+      Create a @keyframe animation to move the hearts from the top to bottom.  At then *end* of the animation, use a negative bottom value to make the hearts appear to go offscreen. (Rotate animation to be added.)
+      
+      ```css
+      @keyframes falling {
+        0% {
 
-            The `transform` property can be used to add many effects like `skew`, `rotate` and [many more](http://learn.shayhowe.com/advanced-html-css/transitions-animations/).  Today we are going to use `scale` to create a pulsing heart by making it bigger and smaller. 
+        }
+        50% {
 
-            Let's use that to create our animation.
-
-            ```css
-            @-webkit-keyframes pulse {
-                0% {
-                    transform: scale(1);
-                }
-                100% {
-                    transform: scale(1.5);
-                }
-            }
-            @keyframes pulse {
-                0% {
-                    transform: scale(1);
-                }
-                100% {
-                    transform: scale(1.5);
-              }
-            }
-            ```
-      </script>
-    </section> 
-            
-    <section class="slide" data-markdown>
-      <script type="text/template">
-#Using the @keyframe animation
-
-The `@keyframes` rule just *creates* the animation but to use it, it much be assigned to an element and a couple more properties need to be declared to determine how the animation should play out.
-
-The `animation-name` property is required as well as the `animation-duration` property so the browser knows which animation should be executed and for how long an animation should take to complete.
-
-By default, animations run **once** from beginning to end. To repeat an animation, use the `animation-iteration-count` property. The values can be a number or the `infinite` keyword to repeat the animation indefinitely.
-
-    .to-be-animated {
-        animation-name: pulse;
-        animation-duration: 2s;
-        animation-iteration-count: infinite;
-    }
-
-This can also be written in shorthand.
-
-    .to-be-animated {
-        animation: pulse 2s infinite;
-    }
+        }
+        100% {
+          bottom: -25px;
+        }
+      }
+      ```
       </script>
     </section> 
 
     <section class="slide" data-markdown>
       <script type="text/template">
-            #Class Exercise
-
-            Let's put this all together and apply this pulse effect to our heart.  First, add a class name to specify which heart element to apply this effect to. Let's call it `heart-pulse`.  The CSS will resemble the sample below.
-
-```css
-.heart-pulse {
-  -webkit-animation: pulse 2s infinite;
-  animation: pulse 2s infinite;
-}
-
-@-webkit-keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-
-  100% {
-    transform: scale(1.5);
-  }
-}
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-
-  100% {
-    transform: scale(1.5);
-  }
-}
-```
+      #Class Exercise: Falling, Rotating Hearts - Step 5
+      
+      Apply the animation to the falling hearts HTML.
+      
+      ```xml
+      <span class="heart-falling">&#9829;</span>
+      <span class="heart-falling">&#9829;</span>
+      ```
+      
+      ```css
+      .heart-falling {
+        position: absolute;
+        animation: falling 6s infinite linear;
+      }
+      ```
+      </script>
+    </section> 
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+      #Class Exercise: Falling, Rotating Hearts - Step 5
+      
+      Add the below `transform: rotate()` property to rotate the hearts, using degrees.
+      
+      ```css
+      @keyframes falling {
+        0% {
+          transform: rotate(360deg);
+        }
+        50% {
+          transform: rotate(0deg);
+        }
+        100% {
+          bottom: -25px;
+          transform: rotate(-360deg);
+        }
+      }
+      ```
       </script>
     </section> 
 
     <section class="slide" data-markdown>
       <script type="text/template">
-            #Yay! It works!
+        #Hackathon & Codepen!
 
-            But... it's kind of "jumpy".  Let's revise the breakpoint from 100% to 50% and see what happens.
+        Let's use the remainder of the time to do whatever you want!  View the [Ladies Learning Code version on CodePen](index.html#slide3) for inspiration or ask your mentors (or Google)!
+
+        When complete, let's take a few moments to go over how to add your creation to Codepen. (It's mostly just copying and pasting).
       </script>
     </section> 
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-            #Class Exercise: Falling, Rotating Hearts
-
-            Let's take this animation stuff a little bit further and create some falling, rotating hearts.  
-
-            1. Add a bunch of hearts to the page and give it a class of `heart-falling`.
-            
-            1. Position the hearts at the top of the card so we can animate it falling down. (More about position here: [http://www.cssnewbie.com/all-about-css-positioning/](http://www.cssnewbie.com/all-about-css-positioning/))
-
-            1. Create a @keyframe animation to move the hearts from the top to bottom.
-
-            1. Rotate the hearts using `transform: rotate()`.
-
-            1. Vary the positioning of the hearts.
-      </script>
-    </section> 
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-            #Hack time & Codepen!
-
-            Let's use the remainder of the time to do whatever you want!  View the [Ladies Learning Code version on CodePen](index.html#slide3) for inspiration or ask your mentors (or Google)!
-
-            When complete, let's take a few moments to go over how to add your creation to Codepen. (It's mostly just copying and pasting).
-          </script>
-</section> 
 
     <!-- Last slide -->
     <section class="slide last">
