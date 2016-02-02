@@ -69,7 +69,7 @@ cite {
 
 .heart-pulse {
   color: #B109AA;
-  -webkit-animation: pulse 2s infinite;
+  display: inline-block;
   animation: pulse 2s infinite;
 }
 
@@ -78,7 +78,6 @@ cite {
   color: red;
   opacity: .5;
   font-size: 22px;
-  -webkit-animation: falling 6s infinite linear;
   animation: falling 6s infinite linear;
 }
 .heart-falling:nth-of-type(1) {
@@ -106,34 +105,18 @@ cite {
   left: 60%;
 }
 
-@-webkit-keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-}
 @keyframes pulse {
   0% {
+    transform: scale(0.5);
+  }
+  50% {
     transform: scale(1);
   }
-  50% {
-    transform: scale(1.5);
-  }
-}
-@-webkit-keyframes falling {
-  0% {
-    transform: rotate(360deg);
-  }
-  50% {
-    transform: rotate(0deg);
-  }
   100% {
-    bottom: -25px;
-    transform: rotate(-360deg);
+    transform: scale(0.5);
   }
 }
+
 @keyframes falling {
   0% {
     transform: rotate(360deg);
