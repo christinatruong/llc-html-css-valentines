@@ -1,68 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Ladies Learning Code</title>
-    <!-- Don't alter slideshow.css, CSSS slide deck needs it to work -->
-    <link rel="stylesheet" href="framework/css/slideshow.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Ladies Learning Code</title>
+  <link rel="stylesheet" href="framework/css/slideshow.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/fonts.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/highlightjs/github.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/styles.css" data-noprefix>
+  <link rel="shortcut icon" href="framework/img/favicon.ico">
 
-    <!-- Theme-specific styles -->
-    <link href='http://fonts.googleapis.com/css?family=Quicksand|Pacifico|Open+Sans:400,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="framework/css/highlightjs-themes/vs.css">
-    <link rel="stylesheet" href="framework/css/theme-llc.css">
-    <link rel="shortcut icon" href="framework/img/favicon.ico"> 
-
-    <!-- Workshop-specific styles -->
-    <link rel="stylesheet" href="framework/css/workshop.css">
-
-    <!-- Takes care of CSS3 prefixes! -->
-    <script src="framework/scripts/prefixfree.min.js"></script>
+  <!-- Takes care of CSS3 prefixes -->
+  <script src="framework/scripts/prefixfree.min.js"></script>
+  
+  <!-- opens all links in a new window -->
+  <base target="_blank">
 </head>
 
 <!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
-<body data-duration="360">
-    
-    <!-- opens all links in a new window -->
-    <base target="_blank">
-    
-    <!-- Intro slide -->
-    <header class="slide intro first">
-        <img class="logo" src="framework/img/logo-llc-white.png">
-        <div class="info">
-            <h1 class="heading-bg">
-                <span class="dark">Welcome to</span><br>
-                <span>Ladies Learning Code!</span>
-            </h1>
-            <div class="heading-bg connected">
-                <span class="dark">GET CONNECTED:</span>
-                <span class="light">NETWORK: The Lab</span><br>
-                <span class="light">PASSWORD: Thisisthelab</span>
-            </div>
-        </div>
-    </header>
-
-    <!-- Instructor info -->
-    <header class="slide intro">
-        <img class="logo" src="framework/img/logo-llc-white.png">
-        <div class="info">
-            <h1 class="heading-bg">
-                <span>HTML & CSS animations</span><br>
-                <span>Valentine's Day Edition</span>
-            </h1>
-
-            <h2><span>with</span> Christina Truong</h2>
-            <img class="instructor-img" src="framework/img/workshop/christina-truong.jpg" alt="Christina Truong">
+<body class="en" data-duration="360">
+  <main>
+    <section class="slide welcome">
+      <h1><img class="logo-stacked" src="framework/img/llc-logo-stacked-white.png" alt="Ladies Learning Code logo">Welcome!</h1>
+      
+      <div class="instructions no-bullet-list">
+        <!-- ADD WIFI INFO HERE -->
+        <!-- <h2>Get Connected</h2>
+        <ul class="connected">
+          <li>Network: wifi network</li>
+          <li>Password: wifi password</li>
+        </ul>
+        <hr> -->
+        
+        <h2>Download<br> & Install</h2>
+        <ul class="downloads">
+          <li>Learner files (zip file): <a href="http://bit.ly/llc-onepage">http://bit.ly/llc-onepage</a>
             <ul>
-              <li><i class="fa fa-envelope"></i><a href="mailto:hello@christinatruong.com">hello@christinatruong.com</li>
-              <li><i class="fa fa-desktop"></i><a href="http://christinatruong.com">christinatruong.com</a></li>
-              <li><i class="fa fa-twitter"></i><a href="http://twitter.com/christinatruong">@christinatruong</a></li>
+              <li>unzip the learner file (<em>extract all</em> if you’re on a PC)</li>
+              <li>open <strong>slides.html</strong> in the browser to view the slides</li>
             </ul>
-        </div>
-    </header>
-
-    <main>
+          </li>
+          <li>Atom Editor: <a href="http://atom.io">http://atom.io</a></li>
+          <li>Chrome Browser: <a href="https://www.google.ca/chrome/browser/desktop/">https://www.google.ca/chrome</a></li>
+          </li>
+        </ul>
+      </div>
+      <footer>
+        <a class="left" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.png" /></a>
+        <p class="left">Content created by <a href="http://christinatruong.com">Christina Truong</a> for <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="right">Use the left <span class="arrow">&#8592;</span> and right <span class="arrow">&#8594;</span> arrow keys to navigate</p>
+      </footer>
+    </section>
+    
+    <section class="slide intro">
+      <img class="logo" src="framework/img/llc-logo-white.png" alt="Ladies Learning Code logo">
+      <h1 class="heading-bg">
+        <span>Intro to HTML & CSS Animations<br>
+        Valentine's Day Edition</span>
+      </h1>
+      
+      <!-- FILL IN INSTRUCTOR DETAILS -->
+      <!-- <img class="instructor" src="http://placehold.it/225x225" alt="Instructor Name">
+      <h2><span class="cursive">with</span> Instructor name</h2>  
+      <ul>
+        <li><a href="mailto:">hello@email.com</a></li>
+        <li><a href="http://website.com">website.com</a></li>
+        <li><a href="http://twitter.com/">@twitter</a></li>
+      </ul> -->
+      
+      <div class="sponsor">
+        <p>In partnership with<br> <img src="framework/img/telus-logo-white.svg" alt="Telus"></p>
+      </div>
+      <footer>
+        <a class="left" rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.png" /></a>
+        <p class="left">Content created by <a href="http://christinatruong.com">Christina Truong</a> for <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="right">Use the left <span class="arrow">&#8592;</span> and right <span class="arrow">&#8594;</span> arrow keys to navigate</p>
+      </footer>
+    </section>
+    
+    
         <section class="slide centered">
             <h2>Today's Project</h2>    
             <p data-height="625" data-theme-id="0" data-slug-hash="KwyGgY" data-default-tab="result" data-user="learningcode" class='codepen'>See the Pen <a href='http://codepen.io/learningcode/pen/KwyGgY/'>KwyGgY</a> by Ladies Learning Code (<a href='http://codepen.io/learningcode'>@learningcode</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
@@ -771,61 +787,49 @@ This can also be written in shorthand.
             When complete, let's take a few moments to go over how to add your creation to Codepen. (It's mostly just copying and pasting).
         </section>
 
-        <!-- Last slide -->
-        <section class="slide last">
-            <h2>Thank you!</h2>
+    <!-- Last slide -->
+    <section class="slide last">
+      <h1>Thank you!</h1>
+      <h2 class="heading-bg">
+        <span>Intro to HTML & CSS Animations<br>
+        Valentine's Day Edition</span>
+      </h2>  
 
-            <h2 class="heading-bg">
-                <span>Intro to HTML & CSS Animations</span><br>
-                <span>Valentine's Day Edition</span>
-            </h2>
-            <h3><span>with</span> Christina Truong</h3>
+      <img class="instructor" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
+      <h2><span class="cursive">with</span> Instructor Name</h2>
+      <ul>
+        <li><a href="mailto:">hello@email.com</a></li>
+        <li><a href="#">mywebsite.com</a></li>
+        <li><a href="http://twitter.com/">@twitter</a></li>
+      </ul>
 
-            <img class="instructor-img" src="framework/img/workshop/christina-truong.jpg" alt="instructor name">
-            <ul>
-              <li><i class="fa fa-envelope"></i><a href="mailto:hello@christinatruong.com">hello@christinatruong.com</li>
-              <li><i class="fa fa-desktop"></i><a href="http://christinatruong.com">christinatruong.com</a></li>
-              <li><i class="fa fa-twitter"></i><a href="http://twitter.com/christinatruong">@christinatruong</a></li>
-            </ul>
+      <p class="attribution">Slide presentation created by <a href="http://christinatruong.com">Christina Truong</a> based on <a href="https://github.com/LeaVerou/csss">Lea Verou's SlideShow</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
+    </section>
 
-            <p class="attribution">Slide presentation created with <a href="https://github.com/LeaVerou/csss">Lea Verou's CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
-        </section>
+  </main><!-- cls main section -->
+  
+  <script src="framework/scripts/jquery-1.11.0.min.js"></script>
+  <script src="framework/scripts/slideshow.js"></script>
 
-    </main><!-- cls main section -->
+  <!-- Uncomment the plugins you need -->
+  <script src="framework/scripts/plugins/css-edit.js"></script>
+  <script src="framework/scripts/plugins/css-snippets.js"></script>
+  <script src="framework/scripts/plugins/css-controls.js"></script>
+  <!-- <script src="plugins/code-highlight.js"></script>-->
 
-    <footer>
-        <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.svg" /></a> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
-        <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
-    </footer>
-    
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="framework/scripts/slideshow.js"></script>
+  <script src="framework/scripts/plugins/markdown/marked.js"></script>
+  <script src="framework/scripts/plugins/markdown/markdown.js"></script>
+  <script src="framework/scripts/plugins/highlight/highlight-8.4.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="framework/scripts/llc.js"></script>
+  <script>
+    var slideshow = new SlideShow();
 
-    <!-- Uncomment the plugins you need -->
-    <script src="framework/scripts/plugins/css-edit.js"></script>
-    <script src="framework/scripts/plugins/css-snippets.js"></script>
-    <script src="framework/scripts/plugins/css-controls.js"></script>
-    <!-- <script src="plugins/code-highlight.js"></script>-->
-
-    <script src="framework/scripts/plugins/markdown/marked.js"></script>
-    <script src="framework/scripts/plugins/markdown/markdown.js"></script>
-    <!-- <script src="framework/scripts/plugins/highlight/highlight.js"></script> -->
-    <script src="framework/scripts/plugins/highlight/highlight-8.4.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-
-    <script>
-        var slideshow = new SlideShow();
-
-        // Grabs all the .snippet elements
-        var snippets = document.querySelectorAll('.snippet');
-        for(var i=0; i<snippets.length; i++) {
-            new CSSSnippet(snippets[i]);
-        }
-
-        // Adds "edit me" note to editable code areas
-        jQuery(document).ready(function(){
-            jQuery(".snippet").before("<span class=\"edit\">edit me</span>");
-        });
-    </script>
+    // Grabs all the .snippet elements
+    var snippets = document.querySelectorAll('.snippet');
+    for(var i=0; i<snippets.length; i++) {
+      new CSSSnippet(snippets[i]);
+    }
+  </script>
 </body>
 </html>
