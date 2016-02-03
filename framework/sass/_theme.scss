@@ -45,6 +45,7 @@ h1 {
     font-size: inherit;
     color: inherit;
     font-family: inherit;
+    background: transparent;
   }
 }
 h2 {
@@ -187,9 +188,6 @@ ul, ol {
   }
 }
 
-iframe {
-  margin-top: 20px;
-}
 strong {
   font-weight: 700;
   color: black;
@@ -276,13 +274,11 @@ iframe.left {
     display: block;
   }
 }
-.highlight,
+.highlight em,
 a.highlight {
-  color: red;
-
-  a {
-    color: red;
-  }
+  color: $llc-pink;
+  font-size: 106%;
+  padding-right: 2px;
 }
 .small-type {
   p, ul, ol {
@@ -497,9 +493,16 @@ e.g.
   &.slide {
     padding: 0;
   }
-  h1, 
+  .logo-stacked {
+    margin-right: 50px;
+  }
+  h1,
   .instructions {
     padding: 30px 64px;
+  }
+  .instructions p {
+    margin: 0;
+    line-height: 1.32;
   }
   h1 {
     background: #111;
@@ -507,23 +510,33 @@ e.g.
     margin: 0;
     font-size: 55px;
   }
-  .logo-stacked {
-    margin: 0px 105px 0 -20px;
-  }
   h2 {
-    font-size: 26px;
     float: left;
-  } 
-  .instructions > ul {
-    margin: 0 0 0 235px;
+    color: black;
+    width: 21%;
+    font-family: $quicksand;
+    color: $llc-pink;
+    text-transform: uppercase;
+    font-size: 30px;
   }
-  ul.connected li {
-    margin-bottom: 0;
-  }
-  ul.downloads > li {
-    margin-bottom: 20px;
+  ol, ul {
+    float: left;
+    width: 79%;
+    margin: 0;
+    
+    ul, ol {
+      float: none;
+      width: 100%;
+    }
+    &.connected li:before {
+      content: "";
+    }
+    &.downloads > li {
+      margin-bottom: 15px;
+    }
   }
 }
+
 /* Instructor Info */
 .slide.intro, 
 .slide.last {
@@ -646,7 +659,7 @@ pre {
   code {
     overflow-y: auto;
     font-size: $font-size-xsm;
-    font-family: Andale Mono, Monaco, monospace;
+    // font-family: Andale Mono, Monaco, monospace;
   }
   + pre {
     margin-top: 15px;
@@ -660,8 +673,19 @@ pre {
 }
 code {
   color: #555;
-  font-size: $font-size-sm;
-  padding: 0 4px;
+  padding: 0 8px;
+  display: inline-block;
+  background: white;
+  font-size: $font-size-base * 1.1;
+  border-radius: 4px;
+  position: relative;
+  top: -2px;
+}
+/* Targets only firefox */
+@-moz-document url-prefix() {
+  code {
+    font-size: $font-size-base - 0.2;
+  }
 }
 
 //code samples

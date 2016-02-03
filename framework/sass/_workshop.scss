@@ -3,6 +3,72 @@
 .slide.intro {
   background: linear-gradient(rgba($black, 0.7),
               rgba($black, 0.7)), 
-              url(../img/banner-home2.jpg) no-repeat;
+              url(../img/banner-home3.jpg) no-repeat;
   background-size: cover;
+}
+
+.slide.intro h1 {
+  font-size: 65px;
+}
+
+.heart-pulse {
+  color: #B109AA;
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
+.heart-falling {
+  position: absolute;
+  color: red;
+  opacity: .5;
+  font-size: 22px;
+  animation: falling 6s infinite linear;
+}
+.heart-falling:nth-of-type(1) {
+  bottom: 1200px;
+  left: 8%;
+}
+.heart-falling:nth-of-type(2) {
+  bottom: 500px;
+  left: 15%;
+}
+.heart-falling:nth-of-type(3) {
+  bottom: 1000px;
+  left: 50%;
+}
+.heart-falling:nth-of-type(4) {
+  bottom: 475px;
+  left: 90%;
+}
+.heart-falling:nth-of-type(5) {
+  bottom: 600px;
+  left: 40%;
+}
+.heart-falling:nth-of-type(6) {
+  bottom: 1200px;
+  left: 60%;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(0.5);
+  }
+}
+
+@keyframes falling {
+  0% {
+    transform: rotate(360deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    bottom: -25px;
+    transform: rotate(-360deg);
+  }
 }

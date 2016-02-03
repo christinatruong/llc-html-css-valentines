@@ -20,17 +20,15 @@
 <!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
 <body class="en" data-duration="360">
   <main>
-    <section class="slide welcome">
+    <section class="slide welcome highlight">
       <h1><img class="logo-stacked" src="framework/img/llc-logo-stacked-white.png" alt="Ladies Learning Code logo">Welcome!</h1>
       
-      <div class="instructions no-bullet-list">
+      <div class="instructions">
         <!-- ADD WIFI INFO HERE -->
-        <!-- <h2>Get Connected</h2>
-        <ul class="connected">
-          <li>Network: wifi network</li>
-          <li>Password: wifi password</li>
-        </ul>
-        <hr> -->
+        <h2>Get Connected</h2>
+        <p><strong>Wifi:</strong> wifi network</p>
+        <p><strong>Password:</strong> wifi password</p>
+        <hr>
         
         <h2>Download<br> & Install</h2>
         <ol class="downloads">
@@ -304,7 +302,7 @@
         
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Exercise #1: Personalize the content (20 mins)
+        #Exercise #1: Personalize the content (15 mins)
         
         Right now, we'll stick to viewing the project with the default HTML styles. Later, we'll be using CSS to change colours, sizing, fonts, etc. So let's not stray away from the current layout too much (for now).
 
@@ -312,13 +310,10 @@
         2. Update the paragraph. Feel free to add a couple more!
         3. You can update the quote but ensure that the `blockquote` tag is still being used.
 
-        
-
-        Don't know what to say yet? Add some placeholder content:<!-- .element: class="note" --> http://meettheipsums.com 
-      
-        ---
-        ###Pro tip!
-        Improve your work flow with keyboard shortcuts. [Here's a cheat sheet](project/keyboard-shortcuts.txt), also located in your project folder.
+        Don't know what to say yet? Add some placeholder content: 
+         
+        * http://meettheipsums.com
+        * https://www.goodreads.com/quotes
       </script>
     </section> 
 
@@ -329,11 +324,13 @@
       </script>
     </section> 
         
-    <section class="slide" data-markdown>
+    <section class="slide highlight" data-markdown>
       <script type="text/template">
         #Intro to CSS
 
-        Though there are some default styles attached to various HTML tags, it should be used to define the *content*. 
+        HTML contains some default styles attached to various HTML tags, such as bolded text for headings or spaces between paragraphs.
+        
+        But HTML should be used to define the *meaning* of the *content*. 
         
         CSS defines the *presentation* and is the language used to make your HTML look any way you want!
         
@@ -346,8 +343,7 @@
 
         **Selectors** determine which element(s) to apply the styles to.  
         
-        **Declarations** are the style rules, written using `property:value` pairs.  
-        Declarations are also contained within a pair curly braces `{}`.
+        **Declarations** are the style rules, written using `property:value` pairs.  Also contained within a pair curly braces `{}`.
 
         ```css
         selector {
@@ -362,9 +358,9 @@
         #CSS Syntax & Terminology
 
         **Properties** determine the type of style to be applied to
-        the element (e.g. color) and followed by a colon (`:`).  
+        the element (e.g. color) and followed by a colon `:` symbol.  
         
-        **Values** are specific to the property. Must end with a semi-colon (`;`).  
+        **Values** are specific to the property and must end with a semi-colon `;` symbol to indicate the instruction is done.  
 
         ```css
         selector {
@@ -409,7 +405,7 @@
 
         CSS can be added to a web page in many ways. Today we'll use a linked/external style sheet.
 
-        Referenced in the `<head>`, use a `<link>` tag and two **attributes**, `rel` and `href`. The value of the `href` points to the location of the style sheet.
+        Referenced in the `<head>`, use a `<link>` tag and two **attributes**, `rel` and `href`. The value of the `href` is the location of the style sheet in your folder structure.
 
         ```
         <head>
@@ -627,13 +623,13 @@ color: #222222;</textarea>
         Let's add it using a `span` tag. It can be included on it's own or within a paragraph.
 
         ```xml
-        <span>&amp;#9829;</span>
+        <span>&#9829;</span>
         ```
         ```xml
-        <p>This goes out to all the volunteers, mentors, instructors and learners across the country. Thanks for making LLC so awesome! Happy Valentine's Day! <span>&amp;#9829;</span></p>
+        <p>This goes out to all the volunteers, mentors, instructors and learners across the country. Thanks for making LLC so awesome! Happy Valentine's Day! <span>&#9829;</span></p>
         ```
         
-        Though these may look like images, they are text and can be treated like text when applying CSS to it. 
+        Though these may look like images, they are actually text and you can applying typography based CSS to it. 
       </script>
     </section> 
     
@@ -641,7 +637,7 @@ color: #222222;</textarea>
       <script type="text/template">
         #Class attributes
         
-        When **type selectors** are too general (targeting the HTML element), use a `class` **attributes** to attach extra identifying information.  Use a leading period to select it.
+        When **type selectors** are too general (targeting the HTML element), use a `class` **attributes** to attach extra identifying information.  Use a leading period in the CSS to select it.
 
         ``` 
         span { /* targets ALL span elements */
@@ -653,8 +649,8 @@ color: #222222;</textarea>
         ```
 
         ```xml   
-        <span>&amp;#9829;</span>
-        <p>This goes out to all the volunteers, mentors, instructors and learners across the country. Thanks for making LLC so awesome! Happy Valentine's Day! <span class="heart-pulse">&amp;#9829;</span></p>
+        <span>&#9829;</span>
+        <p>This goes out to all the volunteers, mentors, instructors and learners across the country. Thanks for making LLC so awesome! Happy Valentine's Day! <span class="heart-pulse">&#9829;</span></p>
         ```
       </script>
     </section>
@@ -663,20 +659,20 @@ color: #222222;</textarea>
       <script type="text/template">
         #Class Exercise: Use a class
         
-        Add the class of `.heart-pulse` to one heart icon.
+        Add the class of `.heart-pulse` to the heart icon.
         
         ```xml   
-        <p>This goes out to all the volunteers, mentors, instructors and learners across the country. Thanks for making LLC so awesome! Happy Valentine's Day! <span class="heart-pulse">&amp;#9829;</span></p>
+        <p>This goes out to all the volunteers, mentors, instructors and learners across the country. Thanks for making LLC so awesome! Happy Valentine's Day! <span class="heart-pulse">&#9829;</span></p>
         ```
         
-        In the CSS, change the color. 
+        In the CSS, try changing the color. 
         
         ```
         .heart-pulse {
           color: #B109AA; /* LLC purple */
         }
         ```
-        We'll animate it in a later exercise, to make it look like it's pulsing!
+        Now let's animate it, to make it look like it's pulsing!
       </script>
     </section>
         
@@ -724,7 +720,7 @@ color: #222222;</textarea>
 
         The `transform` property can be used to add many effects like `skew`, `rotate` and [many more](http://learn.shayhowe.com/advanced-html-css/transitions-animations/).  
         
-        Today we'll use `scale` to create a pulsing heart. 
+        Today we'll use `scale` to create a pulsing heart effect. 
         
         ```css
         @keyframes pulse {
@@ -743,7 +739,7 @@ color: #222222;</textarea>
       <script type="text/template">
         #Using the @keyframe animation
 
-        The `@keyframes` rule just *creates* the animation. To use it, it must be assigned to an element using the *animation name* and *duration*, so the browser knows how long an animation should take.
+        The `@keyframes` rule just *creates* the animation. To use it, it must be assigned to an element using the *animation name*.  Also, add a *duration*, so the browser knows how long an animation should take.
         
         ```
         .heart-pulse {
@@ -765,9 +761,7 @@ color: #222222;</textarea>
       <script type="text/template">
         #Using the @keyframe animation
         
-        By default, animations run *once* from beginning to end. 
-        
-        To repeat an animation, use the `animation-iteration-count` property with a number value or `infinite` to repeat the animation indefinitely.
+        By default, animations run *once* from beginning to end. To repeat an animation, use the `animation-iteration-count` property with a number value or `infinite` to repeat the animation indefinitely.
         
         ```
         .heart-pulse {
@@ -790,13 +784,13 @@ color: #222222;</textarea>
       <script type="text/template">
         #Class Exercise: Pulsing heart
 
-        Let's put this all together and apply this effect to the heart we added earlier.  
+        Let's put this all together and apply this effect to `.heart-pulse`.  
         
         ```xml
         <span class="heart-pulse">&#9829;</span>
         ```
         
-        Because the heart is in a `span` tag, we'll need to add an additional property, `display` to get it to apply the sizing properly.  See the resource below for more info.
+        Because the heart is in a `span` tag, we'll need to add an additional property, `display`, to get it to apply the sizing properly.  See the resource below for more info.
         
 
         ```css
@@ -824,7 +818,7 @@ color: #222222;</textarea>
 
         Yay! It works! But... it's kind of "jumpy".  Remember, we want to make the element bigger, then smaller, then bigger, then smaller...
         
-        Add a half-way point. Let's update our CSS!  Feel free to revise your scale values too!
+        Add a half-way point. Update the CSS. Feel free to revise & experiment with your scale values too!
 
         ```css
         @keyframes pulse {
@@ -888,9 +882,7 @@ color: #222222;</textarea>
         We'll also be using *psuedo-class*, `:nth-of-type` to select specific hearts.
         
         ---
-        These are more advanced CSS concepts that require a bit more discussion. For today, we'll provide the code for you to update but you can see more info here:
-      
-        More about `position` [here](http://www.cssnewbie.com/all-about-css-positioning/) and `:nth-of-type` [here](https://css-tricks.com/almanac/selectors/n/nth-of-type/).
+        These are more advanced CSS concepts that require a bit more discussion. For today, we'll provide the code for you to experiment with but you can see more info about `position` [here](http://www.cssnewbie.com/all-about-css-positioning/) and `:nth-of-type` [here](https://css-tricks.com/almanac/selectors/n/nth-of-type/).
       </script>
     </section> 
     
@@ -914,13 +906,19 @@ color: #222222;</textarea>
       <script type="text/template">
         #Class Exercise: Falling, Rotating Hearts - Step 3
       
-        Now, let's use `left` and `bottom` to position each heart to a different spot on the page or else they will all be position in the same spot.
+        Now, let's use `left` and `bottom` to position each heart to a different spot on the page or else they'll just stack on top of each other.
         
-        Remember, we can't say "top to bottom" so we'll animate the `bottom` property.  
+        Remember, we can't say "top to bottom" so we'll animate just the `bottom` property.  
         
-        Some hearts may appear to be "off screen" but that's okay.  The value is just larger than the height of your browser window.  It will re-appear when the animation is applied.
+        `.heart-falling:nth-of-type(1)` selects the first heart, `.heart-falling:nth-of-type(2)` selects the second and so on.
         
-         `.heart-falling:nth-of-type(1)` selects the first heart, `.heart-falling:nth-of-type(2)` selects the second and so on.
+      </script>
+    </section> 
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Falling, Rotating Hearts - Step 3
+        
         ```
         .heart-falling:nth-of-type(1) {
           bottom: 1200px;
@@ -932,6 +930,7 @@ color: #222222;</textarea>
         }
         ...
         ```
+        Some hearts may appear to be "off screen" but that's okay.  The value is just larger than the height of your browser window.  It will re-appear when the animation is applied.
         
       </script>
     </section> 
@@ -940,7 +939,9 @@ color: #222222;</textarea>
       <script type="text/template">
       #Class Exercise: Falling, Rotating Hearts - Step 4
       
-      Create a @keyframe animation to move the hearts from the top to bottom.  At then *end* of the animation, use a negative bottom value to make the hearts appear to go offscreen. (Rotate animation to be added.)
+      Create a @keyframe animation to move the hearts from the top to bottom.  At then *end* of the animation, use a negative bottom value to make the hearts appear to go offscreen. 
+      
+      (Rotate animation to be added.)
       
       ```css
       @keyframes falling {
@@ -962,11 +963,12 @@ color: #222222;</textarea>
       <script type="text/template">
       #Class Exercise: Falling, Rotating Hearts - Step 5
       
-      Apply the animation to the falling hearts HTML.
+      Apply the animation to the falling hearts class.
       
       ```xml
       <span class="heart-falling">&#9829;</span>
       <span class="heart-falling">&#9829;</span>
+      <!-- ... add more spans to add more hearts! -->
       ```
       
       ```css
@@ -1003,11 +1005,16 @@ color: #222222;</textarea>
 
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Hackathon & Codepen!
+        #Hackathon!
 
-        Let's use the remainder of the time to do whatever you want!  View the [Ladies Learning Code version on CodePen](index.html#slide3) for inspiration or ask your mentors (or Google)!
-
-        When complete, let's take a few moments to go over how to add your creation to Codepen. (It's mostly just copying and pasting).
+        There's so much more you can do! View the Ladies Learning Code version on [CodePen](index.html#slide3) or in your project folders for inspiration or ask your mentors or Google!
+        
+        Here are some suggestions:
+        
+        1. Add your card to [Codepen](http://codepen.io), to be able to share your card online
+        1. Use icon fonts for more options that just unicode.
+        Add a "bomb" to your love bomb card using [Font Awesome](http://fortawesome.github.io/Font-Awesome/icon/bomb/).
+        1. Adjust the colours and size of your hearts or add some more icons.
       </script>
     </section> 
 
